@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)http://packetlife.net/blog/2008/sep/1/ipv6-and-ospfv3/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>IPv6 and OSPFv3 - PacketLife.net</title>
+<link href="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/bootstrap.min.css" rel="stylesheet">
+<link href="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/local.css" rel="stylesheet">
+<link rel="icon" type="image/gif" href="http://media.packetlife.net/static/img/favicon.gif">
+
+<link rel="alternate" type="application/rss+xml" title="Latest Blog Posts" href="http://packetlife.net/blog/feed/">
+<script src="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/f.txt"></script><script src="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/amp4ads-host-v0.js.download"></script><script async="" src="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/analytics.js.download"></script><script src="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/pubads_impl_rendering_257.js.download"></script><script async="" type="text/javascript" src="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/gpt.js.download"></script><script type="text/javascript">
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+
+<script type="text/javascript">
+googletag.cmd.push(function() {
+googletag.defineSlot('/3265105/PacketLife_Blog_Top_728x90', [728, 90], 'div-gpt-ad-1394245464163-0').addService(googletag.pubads());
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+</script>
+<link rel="preload" href="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/f(1).txt" as="script"><script type="text/javascript" src="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/f(1).txt"></script><link rel="preload" href="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/f(2).txt" as="script"><script type="text/javascript" src="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/f(2).txt"></script><script src="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/pubads_impl_257.js.download" async=""></script><link rel="prefetch" href="http://tpc.googlesyndication.com/safeframe/1-0-29/html/container.html"></head>
+
+<body style="">
+<div id="wrap">
+  <div class="container">
+    <a href="http://packetlife.net/"><img src="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/logo.png" alt="PacketLife.net logo" id="site_logo"></a>
+    <ul class="list-inline pull-right outertext" id="usernav">
+      
+        <li>Welcome, Guest!</li>
+        <li>|</li>
+        <li><a href="http://packetlife.net/users/login/">Log in</a></li>
+        <li>|</li>
+        <li><a href="http://packetlife.net/users/register/">Register</a></li>
+      
+    </ul>
+    <div id="page">
+      <div class="header">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="http://packetlife.net/blog/">Blog</a></li>
+                <li><a href="http://packetlife.net/library/cheat-sheets/">Cheat Sheets</a></li>
+                <li><a href="http://packetlife.net/captures/">Captures</a></li>
+                <li><a href="http://packetlife.net/armory/">Armory</a></li>
+                <li><a href="http://packetlife.net/toolbox/">Toolbox</a></li>
+                <li><a href="http://packetlife.net/bookshelf/">Bookshelf</a></li>
+                <li><a href="http://packetlife.net/contact/">Contact Me</a></li>
+              </ul>
+              
+            </div>
+        </nav>
+      </div>
+      <div id="content">
+        
+        
+
+  <!-- PacketLife_Blog_Top_728x90 -->
+  <div id="div-gpt-ad-1394245464163-0" class="banner" data-google-query-id="COCClIS-7d0CFYgXAQodaJ8Amw">
+  <script type="text/javascript">
+  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1394245464163-0'); });
+  </script>
+  <div id="google_ads_iframe_/3265105/PacketLife_Blog_Top_728x90_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/3265105/PacketLife_Blog_Top_728x90_0" title="3rd party ad content" name="google_ads_iframe_/3265105/PacketLife_Blog_Top_728x90_0" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" data-load-complete="true" src="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/saved_resource.html"></iframe></div></div>
+
+
+        
+<div class="row">
+  <div class="col-md-2">
+  
+  </div>
+  <div class="col-md-8">
+  
+
+
+
+
+
+
+<h1 class="page-header">IPv6 and OSPFv3</h1>
+<h5 class="text-muted">By <a href="http://packetlife.net/users/stretch/">stretch</a> | Monday, September 1, 2008 at 6:29 a.m. UTC</h5>
+<div class="article">
+<div><p>This short lab should provide some exposure to <a href="http://www.cisco.com/en/US/docs/ios/ipv6/configuration/guide/ip6-ospf_ps6441_TSD_Products_Configuration_Guide_Chapter.html">configuring OSPF for IPv6</a> under IOS. OSPFv3 is to IPv6 as OSPFv2 is to IPv4, and the two OSPF versions are not compatible with one another. The two protocols can be run simultaneously to support parallel (but separate) IPv6 and IPv4 routing domains, but the lab provided here will cover only OSPFv3.</p>
+<p><img src="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/OSPFv3_lab.png" alt="OSPFv3_lab.png" class="center-block"></p>
+<h3 id="ipv6-addressing">IPv6 Addressing</h3>
+<p>The first step in base configuration is to enable IPv6 unicast routing:</p>
+<pre>R1(config)# <strong>ipv6 unicast-routing</strong>
+</pre>
+
+<p>Next we'll need to assign IPv6 addresses to the necessary interfaces. IPv6 stateless address autoconfiguration (<a href="http://tools.ietf.org/html/rfc4862">RFC 4862</a>) allows the interface ID portion of the address to be automatically <a href="http://packetlife.net/blog/2008/aug/04/eui-64-ipv6/">formed from an EUI-64 address</a>. We'll take advantage of this by appending the <code>eui-64</code> keyword to the <code>ipv6 address</code> command and leaving the interface ID portion of the IPv6 address zeroed.</p>
+<pre>R1(config)# <strong>interface f0/1</strong>
+R1(config-if)# <strong>ipv6 address 2001:db8:0:12::/64 eui-64</strong>
+</pre>
+
+<p>Although we could address our serial interfaces in the same manner, setting the interface ID manually makes it easier to define the static frame relay mappings. We'll also have create frame relay mappings for the link-local (FE80::/10) addresses, so we may as well manually specify the interface IDs of those addresses as well.</p>
+<pre>R1(config)# <strong>interface s1/0</strong>
+R1(config-if)# <strong>ipv6 address 2001:db8::1/64</strong>
+R1(config-if)# <strong>ipv6 address fe80::1 link-local</strong>
+</pre>
+
+<p>Creating IPv6 frame relay mappings is very similar to the commands issued for IPv4 addresses. The most important detail to remember is that link-local interface addresses must also be mapped, as all OSPFv3 communication takes places across these addresses.</p>
+<pre>R1(config-if)# <strong>encapsulation frame-relay</strong>
+R1(config-if)# <strong>no frame-relay inverse-arp</strong>
+R1(config-if)# <strong>frame-relay map ipv6 2001:db8::3 103</strong>
+R1(config-if)# <strong>frame-relay map ipv6 2001:db8::2 103</strong>
+R1(config-if)# <strong>frame-relay map ipv6 fe80::3 103 broadcast</strong>
+R1(config-if)# <strong>frame-relay map ipv6 fe80::2 103</strong>
+</pre>
+
+<p>We can verify that each interface has both a link-local address and our configured global unicast address assigned:</p>
+<pre>R1# <strong>show ipv6 interface brief</strong>
+...
+FastEthernet0/1            [up/up]
+FE80::C001:47FF:FEFD:1
+2001:DB8:0:12:C001:47FF:FEFD:1
+Serial1/0                  [up/up]
+FE80::1
+2001:DB8::1
+...
+</pre>
+
+<p>Likewise, we can verify our frame relay mappings as we would with IPv4:</p>
+<pre>R1# <strong>show frame-relay map | include Serial1/0</strong>
+Serial1/0 (up): ipv6 FE80::2 dlci 103(0x67,0x1870), static,
+Serial1/0 (up): ipv6 FE80::3 dlci 103(0x67,0x1870), static,
+Serial1/0 (up): ipv6 2001:DB8::2 dlci 103(0x67,0x1870), static,
+Serial1/0 (up): ipv6 2001:DB8::3 dlci 103(0x67,0x1870), static,
+</pre>
+
+<p>Once all interfaces on routers have been addressed, it's a good idea to verify connectivity across individual links before moving onto OSPF configuration. You can ping global unicast IPv6 addresses just like IPv4 addresses, but notice that you are prompted for the outgoing interface when pinging a link-local address. This is because the router has no way of knowing which link you want to reach.</p>
+<pre>R1# <strong>ping fe80::2</strong>
+Output Interface: <em>serial1/0</em>
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to FE80::2, timeout is 2 seconds:
+Packet sent with a source address of FE80::1
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 12/18/36 ms
+</pre>
+
+<h3 id="configuring-ospfv3">Configuring OSPFv3</h3>
+<p>OSPFv3 differs from its predecessor in a number of ways, as we'll see in the following configurations. The first step, of course, is to enable the OSPF process:</p>
+<pre>R1(config)# <strong>ipv6 router ospf 1</strong>
+</pre>
+
+<p>If you have console logging enabled, you may notice this message pop up:</p>
+<pre>%OSPFv3-4-NORTRID: OSPFv3 process 1 could not pick a router-id,
+please configure manually
+</pre>
+
+<p>Although OSPFv3 deals solely with IPv6 addresses, it still uses 32-bit router IDs, which are expressed in dotted-decimal (IPv4) format. Since we haven't configured any IPv4 interfaces in our lab, we'll need to define the OSPFv3 router IDs manually on each router:</p>
+<pre>R1(config-rtr)# <strong>router-id 1.1.1.1</strong>
+</pre>
+
+<p>Although formatted as an IPv4 address, the router ID is an arbitrary value used to identify an OSPF router to its neighbors.</p>
+<p>Since the 2001:db8:0:3::/64 and 2001:db8:0:4::/64 subnets have no neighboring OSPFv3 routers, we'll designate the F0/1 interfaces on R3 and R4 as passive to protect against malicious or accidental adjacency formation.</p>
+<pre>R3(config-rtr)# <strong>passive-interface f0/1</strong>
+</pre>
+
+<pre>R4(config-rtr)# <strong>passive-interface f0/1</strong>
+</pre>
+
+<p>Next we'll need to assign interfaces to OSPF areas. Unlike OSPFv2, which used the <code>network</code> command under the router process to assign subnets to areas, OSPFv3 area assignments are made under interface configuration.</p>
+<pre>R1(config)# <strong>interface s1/0</strong>
+R1(config-if)# <strong>ipv6 ospf 1 area 0</strong>
+R1(config-if)# <strong>interface f0/1</strong>
+R1(config-if)# <strong>ipv6 ospf 1 area 1</strong>
+</pre>
+
+<p>Be sure to set the DR priorities appropriately for frame relay interfaces, to ensure that R3 (the multipoint hub) becomes the DR. You might also want to set the priorities for the other two frame relay routers to zero.</p>
+<pre>R3(config)# <strong>interface s1/0</strong>
+R3(config-if)# <strong>ipv6 ospf priority 100</strong>
+</pre>
+
+<p>Since our frame relay cloud is a non-broadcast multiaccess (NBMA) link, we'll need to manually configure our OSPF neighbors on the hub. Like area assignment, this is done under interface configuration. Each neighbor must be listed with its link-local address.</p>
+<pre>R3(config-if)# <strong>ipv6 ospf neighbor fe80::1</strong>
+R3(config-if)# <strong>ipv6 ospf neighbor fe80::2</strong>
+</pre>
+
+<p>Notice that the priority and neighbor configurations do not specify the OSPF process like the area assignments do; if multiple OSPFv3 processes are running, interface priority and neighbor configurations affect all of them.</p>
+<p>Area configuration is still performed under the OSPF process. Here we'll configure area 2 as a stub since it has only one connection to the backbone. (This won't have any affect on our internal OSPF routes, but will cause the ABR R3 to inject a default route into the the area.) Be sure to apply the stub configuration to both routers 3 and 4.</p>
+<pre>R3(config)# <strong>ipv6 router ospf 1</strong>
+R3(config-rtr)# <strong>area 2 stub</strong>
+</pre>
+
+<pre>R4(config)# <strong>ipv6 router ospf 1</strong>
+R4(config-rtr)# <strong>area 2 stub</strong>
+</pre>
+
+<h3 id="verification">Verification</h3>
+<p>If everything is configured properly, all routers should now have full reachability via IPv6. We can inspect a router's neighbor adjacencies with the <code>show ipv6 ospf neighbor</code> command:</p>
+<pre>R3# <strong>show ipv6 ospf neighbor</strong>
+
+Neighbor ID   Pri   State          Dead Time  Interface ID  Interface
+2.2.2.2         1   FULL/BDR       00:01:34   6             Serial1/0
+1.1.1.1         1   FULL/DROTHER   00:01:44   6             Serial1/0
+4.4.4.4         1   FULL/DR        00:00:33   4             FastEthernet0/0
+</pre>
+
+<p>Similarly, we can inspect the IPv6 routing table of R4 to verify it has received all OSPF routes, including the default route (::/0) injected into area 2 from R3.</p>
+<pre>R4# <strong>show ipv6 route</strong>
+IPv6 Routing Table - 10 entries
+Codes: C - Connected, L - Local, S - Static, R - RIP, B - BGP
+   U - Per-user Static route
+   I1 - ISIS L1, I2 - ISIS L2, IA - ISIS interarea, IS - ISIS summary
+   O - OSPF intra, OI - OSPF inter, OE1 - OSPF ext 1, OE2 - OSPF ext 2
+   ON1 - OSPF NSSA ext 1, ON2 - OSPF NSSA ext 2
+   D - EIGRP, EX - EIGRP external
+OI  ::/0 [110/11]
+ via FE80::C003:48FF:FE10:0, FastEthernet0/0
+OI  2001:DB8::/64 [110/74]
+ via FE80::C003:48FF:FE10:0, FastEthernet0/0
+O   2001:DB8:0:3::/64 [110/20]
+ via FE80::C003:48FF:FE10:0, FastEthernet0/0
+C   2001:DB8:0:4::/64 [0/0]
+ via ::, FastEthernet0/1
+L   2001:DB8:0:4:C004:48FF:FE10:1/128 [0/0]
+ via ::, FastEthernet0/1
+OI  2001:DB8:0:12::/64 [110/84]
+ via FE80::C003:48FF:FE10:0, FastEthernet0/0
+C   2001:DB8:0:34::/64 [0/0]
+ via ::, FastEthernet0/0
+L   2001:DB8:0:34:C004:48FF:FE10:0/128 [0/0]
+ via ::, FastEthernet0/0
+L   FE80::/10 [0/0]
+ via ::, Null0
+L   FF00::/8 [0/0]
+ via ::, Null0
+</pre>
+
+<p>Beyond what was demonstrated here, you'll find the majority of OSPFv3 configuration commands are nearly identical to those of its predecessor. If you've configured OSPFv2 routing in the past and have a solid grasp of IPv6, OSPFv3 shouldn't give you any trouble.</p></div>
+</div>
+
+
+
+
+  <div class="well">
+    
+      <div class="pull-right">
+        <a href="http://packetlife.net/users/stretch/"><img src="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/tn_stretch.jpg" class="img-thumbnail"></a>
+      </div>
+    
+    <h3>About the Author</h3>
+    <p>Jeremy Stretch is a network engineer living in the Raleigh-Durham, North Carolina area. He is known for his blog and cheat sheets here at Packet Life. You can reach him by <a href="http://packetlife.net/contact/">email</a> or follow him on <a href="http://twitter.com/packetlife">Twitter</a>.</p>
+  </div>
+
+
+<div class="text-right">
+  <p class="text-muted">Posted in <a href="http://packetlife.net/blog/category/ipv6/">IPv6</a>, <a href="http://packetlife.net/blog/category/routing/">Routing</a></p>
+</div>
+
+<div class="text-center">
+  <a href="https://m.do.co/c/e09ceb441271"><img src="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/ssd-virtual-servers-banner-468x60.jpg" width="468" height="60" class="center-block"></a>
+</div>
+
+
+<a name="comments"></a>
+<h4 class="text-center text-muted">Comments</h4>
+<hr>
+
+  
+
+<a name="c367"></a>
+<div class="row">
+  <div class="col-md-4 text-right">
+    
+      
+      <strong>Kevin</strong> (guest)
+      
+    <br>
+    <small class="text-muted">September 2, 2008 at 3:01 p.m. UTC</small>
+  </div>
+  <div class="col-md-8">
+    <p>Missing some important configuration! R3 needs sub-interfaces!</p>
+    
+    <hr>
+  </div>
+</div>
+
+
+
+  
+
+<a name="c368"></a>
+<div class="row">
+  <div class="col-md-4 text-right">
+    
+      <a href="http://packetlife.net/users/stretch/" rel="nofollow"><strong>stretch</strong></a>
+    <br>
+    <small class="text-muted">September 2, 2008 at 3:09 p.m. UTC</small>
+  </div>
+  <div class="col-md-8">
+    <p>@Kevin: The frame relay DLCIs aren't configured as individual point-to-point links; R3 only needs a single point-to-multipoint interface (the physical interface).</p>
+    
+    <hr>
+  </div>
+</div>
+
+
+
+  
+
+<a name="c369"></a>
+<div class="row">
+  <div class="col-md-4 text-right">
+    
+      
+      <strong>Kevin</strong> (guest)
+      
+    <br>
+    <small class="text-muted">September 2, 2008 at 3:47 p.m. UTC</small>
+  </div>
+  <div class="col-md-8">
+    <p>Sorry Stretch, I guess the 3725s don't support!</p>
+    
+    <hr>
+  </div>
+</div>
+
+
+
+  
+
+<a name="c370"></a>
+<div class="row">
+  <div class="col-md-4 text-right">
+    
+      <a href="http://packetlife.net/users/stretch/" rel="nofollow"><strong>stretch</strong></a>
+    <br>
+    <small class="text-muted">September 2, 2008 at 4:11 p.m. UTC</small>
+  </div>
+  <div class="col-md-8">
+    <div><p>It's not a matter of hardware support; in fact, I used 3725s in my lab as I was writing this. Read up on frame relay configuration. Here's the configuration on R3 for reference:</p>
+<div class="codehilite"><pre>interface Serial1/0
+ encapsulation frame-relay
+ ipv6 address FE80::3 link-local
+ ipv6 address 2001:DB8::3/64
+ ipv6 ospf priority 100
+ ipv6 ospf neighbor FE80::2
+ ipv6 ospf neighbor FE80::1
+ ipv6 ospf 1 area 0
+ frame-relay map ipv6 FE80::2 302 broadcast
+ frame-relay map ipv6 2001:DB8::2 302 broadcast
+ frame-relay map ipv6 2001:DB8::1 301 broadcast
+ frame-relay map ipv6 FE80::1 301 broadcast
+ no frame-relay inverse-arp
+</pre></div></div>
+    
+    <hr>
+  </div>
+</div>
+
+
+
+  
+
+<a name="c371"></a>
+<div class="row">
+  <div class="col-md-4 text-right">
+    
+      
+      <strong>Ron</strong> (guest)
+      
+    <br>
+    <small class="text-muted">September 2, 2008 at 5:11 p.m. UTC</small>
+  </div>
+  <div class="col-md-8">
+    <p>Stretch thanks!</p>
+    
+    <hr>
+  </div>
+</div>
+
+
+
+  
+
+<a name="c372"></a>
+<div class="row">
+  <div class="col-md-4 text-right">
+    
+      
+      <strong>llma</strong> (guest)
+      
+    <br>
+    <small class="text-muted">September 2, 2008 at 9:41 p.m. UTC</small>
+  </div>
+  <div class="col-md-8">
+    <p>Stretch !
+Thanks. Could you post your recommendation for frame relay hub-and-spoke configuration using GNS3 ?
+Thanks again..</p>
+    
+    <hr>
+  </div>
+</div>
+
+
+
+  
+
+<a name="c6195"></a>
+<div class="row">
+  <div class="col-md-4 text-right">
+    
+      
+      <strong>mohamed abdel rahman</strong> (guest)
+      
+    <br>
+    <small class="text-muted">April 8, 2013 at 2:31 p.m. UTC</small>
+  </div>
+  <div class="col-md-8">
+    <div><p>Dear Stretch,</p>
+<pre><code> very nice discussing realy thank you very much
+</code></pre>
+<p>Best Regards<br>Mohamed Abdel Rahman </p></div>
+    
+    <hr>
+  </div>
+</div>
+
+
+
+  
+
+<a name="c6451"></a>
+<div class="row">
+  <div class="col-md-4 text-right">
+    
+      
+      <strong>dudos</strong> (guest)
+      
+    <br>
+    <small class="text-muted">August 4, 2013 at 3:31 a.m. UTC</small>
+  </div>
+  <div class="col-md-8">
+    <p>Good work here, but no setup config about your FRAME-RELAY SWITCH device or did you just pick a frame-relay switch that needs no configuration other than configuring the DLCI numbers? i would like to see how to do that through a manual configuration.<br>thanks.</p>
+    
+    
+  </div>
+</div>
+
+
+
+
+
+
+    <div class="alert alert-info">Comments have closed for this article due to its age.</div>
+
+
+
+  </div>
+  <div class="col-md-2">
+  
+  </div>
+</div>
+
+      </div>
+    </div>
+    <div class="text-center">
+      <ul class="list-inline outertext" id="footernav">
+        <li><a href="http://packetlife.net/">Home</a></li>
+        <li>|</li>
+        <li><a href="http://packetlife.net/blog/">Blog</a></li>
+        <li>|</li>
+        <li><a href="http://packetlife.net/library/cheat-sheets/">Cheat Sheets</a></li>
+        <li>|</li>
+        <li><a href="http://packetlife.net/captures/">Captures</a></li>
+        <li>|</li>
+        <li><a href="http://packetlife.net/armory/">Armory</a></li>
+        <li>|</li>
+        <li><a href="http://packetlife.net/toolbox/">Toolbox</a></li>
+        <li>|</li>
+        <li><a href="http://packetlife.net/bookshelf/">Bookshelf</a></li>
+        <li>|</li>
+        <li><a href="http://packetlife.net/contact/">Contact Me</a></li>
+        <li>|</li>
+        <li><a href="http://packetlife.net/about/">About</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container text-center small">
+    <strong>More cool stuff</strong>
+    <ul class="list-inline">
+      <li><a href="http://networking-forum.com/">networking-forum.com</a></li>
+      <li>|</li>
+      <li><a href="http://www.reddit.com/r/networking/">r/Networking</a></li>
+      <li>|</li>
+      <li><a href="http://inetpro.org/wiki/">Internetworkpro</a></li>
+      <li>|</li>
+      <li><a href="http://firewall.cx/">firewall.cx</a></li>
+      <li>|</li>
+      <li><a href="http://networkengineering.stackexchange.com/">Network Engineering @ StackExchange</a></li>
+    </ul>
+  </div>
+</div>
+<script src="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/jquery.min.js.download"></script>
+<script src="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/bootstrap.min.js.download"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3943290-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<iframe id="google_osd_static_frame_2994239853080" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./Frame Relay - IPv6 and OSPFv3 - PacketLife.net_files/saved_resource(1).html"></iframe></body></html>

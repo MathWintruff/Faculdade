@@ -1,0 +1,5 @@
+var DISQUSWIDGETS;
+
+if (typeof DISQUSWIDGETS != 'undefined') {
+    DISQUSWIDGETS.displayCount({"text":{"and":"e","comments":{"zero":"Nenhum coment\u00e1rio","multiple":"{num} Coment\u00e1rios","one":"1 Coment\u00e1rio"}},"counts":[{"id":"3486 http:\/\/www.dltec.com.br\/blog\/?p=3486","comments":0}]});
+}

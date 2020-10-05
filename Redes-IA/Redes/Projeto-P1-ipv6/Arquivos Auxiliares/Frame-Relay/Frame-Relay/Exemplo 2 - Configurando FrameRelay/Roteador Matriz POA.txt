@@ -1,0 +1,98 @@
+
+
+!! Configuração de Router em Topologia Frame-relay
+!! Router POA - conectado fisicamente a 1 Router em "Switching"
+!! Router POA - conectado logicamente a 3 Router's de diferentes unidades
+
+
+ conf t
+
+  hostname R_Matriz
+  service password-encryption
+  enable secret cisco
+  banner motd "R_Matriz - Central Frame-Relay POA"
+
+  line console 0
+  password cisco
+  login
+  exit
+
+  line vty 0 4
+  password cisco
+  login
+  exit
+
+  int f0/0
+  ip adress 192.168.10.1 255.255.255.0
+  exit
+
+  interface s0/0
+  no ip address
+  encapsulation frame-relay
+  no shut
+  exit
+
+! Interface Serial 0/0.100 para conexão lógica com Router NH
+!## Necessario NAT para acesso fake a Internet (retorno dos pacotes) ou o provedor saber os enderecos internos que possuímos
+
+  int s0/0.100 point-to-point
+  ip address 172.16.1.1 255.255.255.252
+  ip nat inside
+  frame-relay interface-dlci 100
+  bandwidth 56
+  exit
+
+! Interface Serial 0/0.200 para conexão lógica com Router CAXIAS
+
+  int s0/0.200 point-to-point
+  ip address 172.16.2.1 255.255.255.252
+  ip nat inside
+  frame-relay interface-dlci 200
+  bandwidth 56
+  exit
+
+
+! Interface Serial 0/0.300 para conexão lógica com Router PELOTAS
+
+  int s0/0.300 point-to-point
+  ip address 172.16.3.1 255.255.255.252
+  ip nat inside
+  frame-relay interface-dlci 300
+  bandwidth 56
+  exit
+
+  interface s0/1
+  ip address 201.0.0.2 255.255.255.252
+  ip nat outside
+  no shutdown
+  exit
+
+! Libera NAT com Overload para acesso a internet
+  ip nat inside source list 1 interface serial 0/1 overload
+  access-list 1 permit 172.16.1.0 0.0.0.3
+  access-list 1 permit 172.16.2.0 0.0.0.3
+  access-list 1 permit 172.16.3.0 0.0.0.3
+  access-list 1 permit 192.168.20.0 0.0.0.255
+  access-list 1 permit 192.168.30.0 0.0.0.255
+  access-list 1 permit 192.168.40.0 0.0.0.255
+  
+! Roteamento DEFAULT
+  ip route 0.0.0.0 0.0.0.0 201.0.0.1
+  
+! Roteamento dinamico via EIGRP
+  router eigrp 10
+    no auto-summary
+    redistribute static
+    network 172.16.1.0
+    network 172.16.2.0
+    network 172.16.3.0
+    
+  exit
+! Roteamento estático entre Roteadores
+
+!  ip route 192.168.20.0 255.255.255.0 172.16.1.2
+!  ip route 192.168.30.0 255.255.255.0 172.16.2.2
+!  ip route 192.168.40.0 255.255.255.0 172.16.3.2
+!  exit
+exit
+ copy running-config startup-config

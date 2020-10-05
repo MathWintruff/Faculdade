@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/ -->
+<html lang="pt-BR" id="arve" prefix="og: http://ogp.me/ns#"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- <meta name="author" content="Italo Mariano - italomariano.com">-->
+  	<!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="http://blogdoscursos.com.br/wp-content/themes/cursos/assets/ico/favicon.ico">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://blogdoscursos.com.br/wp-content/themes/cursos/assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://blogdoscursos.com.br/wp-content/themes/cursos/assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://blogdoscursos.com.br/wp-content/themes/cursos/assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="http://blogdoscursos.com.br/wp-content/themes/cursos/assets/ico/apple-touch-icon-57-precomposed.png">
+  <title>Blog dos Cursos | Criando Servidor FTP no Packet Tracer | Blog Hardware</title>
+  <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="pingback" href="http://blogdoscursos.com.br/xmlrpc.php">
+    <!--[if lt IE 9]>
+  <script src="http://blogdoscursos.com.br/wp-content/themes/cursos/js/html5.js"></script>
+  <![endif]-->
+  
+<!-- This site is optimized with the Yoast SEO plugin v5.8 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Aprenda a configurar um servidor ftp no packet tracer.">
+<link rel="canonical" href="http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Criando Servidor FTP no Packet Tracer | Blog Hardware">
+<meta property="og:description" content="Aprenda a configurar um servidor ftp no packet tracer.">
+<meta property="og:url" content="http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/">
+<meta property="og:site_name" content="Blog dos Cursos">
+<meta property="article:author" content="https://www.facebook.com/edpojc">
+<meta property="article:tag" content="ccna">
+<meta property="article:tag" content="ftp">
+<meta property="article:tag" content="packet tracer">
+<meta property="article:tag" content="servidor">
+<meta property="article:section" content="Hardware">
+<meta property="article:published_time" content="2013-05-15T10:03:43-03:00">
+<meta property="og:image" content="http://blogdoscursos.com.br/wp-content/uploads/2013/05/capa4.png">
+<meta property="og:image:width" content="700">
+<meta property="og:image:height" content="400">
+<script async="" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/saved_resource"></script><script type="text/javascript" async="" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/analytics.js.download"></script><script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"http:\/\/blogdoscursos.com.br\/","name":"Blog dos Cursos","potentialAction":{"@type":"SearchAction","target":"http:\/\/blogdoscursos.com.br\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="http://s0.wp.com/">
+<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Feed para Blog dos Cursos »" href="http://blogdoscursos.com.br/feed/">
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Blog dos Cursos »" href="http://blogdoscursos.com.br/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Blog dos Cursos » Criando Servidor FTP no Packet Tracer" href="http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/blogdoscursos.com.br\/wp-includes\/js\/wp-emoji-release.min.js?ver=6428287c347efbbb22f311d66bba0f23"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56794,8205,9794,65039],[55358,56794,8203,9794,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="zilla-likes-css" href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/zilla-likes.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-pagenavi-css" href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/pagenavi-css.css" type="text/css" media="all">
+<link rel="stylesheet" id="pluto-google-font-css" href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="pluto-magnific-popup-css" href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/magnific-popup.css" type="text/css" media="all">
+<link rel="stylesheet" id="pluto-style-css" href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="pluto-editor-style-css" href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/editor-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="pluto-main-less-css" href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/pluto-main-less.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/jetpack.css" type="text/css" media="all">
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/jquery-migrate.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var ajax_tptn_tracker = {"ajax_url":"http:\/\/blogdoscursos.com.br\/","top_ten_id":"2008","top_ten_blog_id":"1","activate_counter":"11","tptn_rnd":"942147644"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/top-10-tracker.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var zilla_likes = {"ajaxurl":"http:\/\/blogdoscursos.com.br\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/zilla-likes.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var aamLocal = {"nonce":"72403ca08e","ajaxurl":"http:\/\/blogdoscursos.com.br\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/aam-login.js.download"></script>
+<link rel="https://api.w.org/" href="http://blogdoscursos.com.br/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blogdoscursos.com.br/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blogdoscursos.com.br/wp-includes/wlwmanifest.xml"> 
+
+<link rel="shortlink" href="http://blogdoscursos.com.br/?p=2008">
+<link rel="alternate" type="application/json+oembed" href="http://blogdoscursos.com.br/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fblogdoscursos.com.br%2Fcriando-servidor-ftp-no-packet-tracer%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://blogdoscursos.com.br/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fblogdoscursos.com.br%2Fcriando-servidor-ftp-no-packet-tracer%2F&amp;format=xml">
+<script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//blogdoscursos.com.br/?wordfence_lh=1&hid=16E06CB471C4839302EED260777F7CD1');
+</script>
+<link rel="dns-prefetch" href="http://i0.wp.com/">
+<link rel="dns-prefetch" href="http://i1.wp.com/">
+<link rel="dns-prefetch" href="http://i2.wp.com/">
+<script type="text/javascript">var ajaxurl = "http://blogdoscursos.com.br/wp-admin/admin-ajax.php"</script><script type="text/javascript" async="" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/saved_resource(1)"></script><script type="text/javascript" async="" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/embed.js.download"></script><script async="" type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/count.js.download"></script><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.d797d52db05c56e7ec33542889f90bca.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.c11fe52243dba94195dd363cbd3310b9.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.37ca27bb3049421f2832eed5d09cfc6b.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><script src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/alfalfa.4a5fcca1fe50a757044dfd331b660625.js.download" async="" charset="UTF-8"></script></head>
+
+<body class="post-template-default single single-post postid-2008 single-format-standard menu-position-left sidebar-position-right not-wrapped-widgets no-ads-on-smartphones no-ads-on-tablets with-infinite-scroll">
+      <!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async="" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-107599420-1');
+</script>
+    <div class="menu-block  ps-container">
+    
+
+      <div class="logo">
+        <a href="http://blogdoscursos.com.br/">
+                      <img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/logo_bc.png" alt="">
+                            </a>
+      </div>
+      
+      <div class="divider"></div>
+
+      <section>
+	 <form class="search-form" role="search" method="get" id="search-form" action="http://blogdoscursos.com.br/">
+    <label for="s"></label>
+     <input type="search" class="search-field" value="" name="s" id="s" placeholder="Pesquisar...">
+     <input type="submit" class="search-submit" value="" required="">
+     </form></section>	
+  
+      <div class="os_menu"><ul id="menu-menu-left" class="menu"><li id="menu-item-3202" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3202"><a href="http://blogdoscursos.com.br/categoria/curso-abc/">ABC – Inglês</a></li>
+<li id="menu-item-3204" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3204"><a href="http://blogdoscursos.com.br/categoria/informatica/">Informática</a></li>
+<li id="menu-item-3205" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3205"><a href="http://blogdoscursos.com.br/categoria/webdesign/">Web Design</a></li>
+<li id="menu-item-3203" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3203"><a href="http://blogdoscursos.com.br/categoria/hardware/">Hardware</a></li>
+<li id="menu-item-3206" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3206"><a href="http://blogdoscursos.com.br/categoria/ti/">TI</a></li>
+</ul></div>
+		
+      
+      
+      
+      <div class="divider"></div>
+
+      
+
+      <div class="zilla-social size-16px"></div>
+
+      
+
+
+      
+
+      <div class="ps-scrollbar-x-rail" style="width: 239px; display: none; left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 927px; display: none; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div></div>
+  <div class="menu-toggler-w f-menu-toggler-w">
+    <a href="http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/#" class="menu-toggler">
+      <i class="fa os-icon-bars"></i>
+      <span class="menu-toggler-label">Menu</span>
+    </a>
+    <a href="http://blogdoscursos.com.br/" class="logo">
+                                  <img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/logo_bc.png" alt="">
+                                    </a>
+  </div>
+<div class="main-content single">
+  <div class="row row-no-margins">
+
+            <div class="col-lg-9 col-md-12 reading-mode-content">
+      <div class="content">
+                                                  <div class="post-navigation-unique">
+              <div class="post-navigation-previous">
+                <div class="arrow"><i class="fa os-icon-angle-up"></i></div>
+                <div class="caption">anterior</div>
+                <div class="navi-link"><a href="http://blogdoscursos.com.br/protetores-de-link-como-se-livrar-deles/" rel="prev">Protetores de link | Como se livrar deles?</a></div>
+              </div>
+            </div>
+                                <article id="post-2008" class="pluto-post-box post-2008 post type-post status-publish format-standard has-post-thumbnail hentry category-hardware tag-ccna tag-ftp tag-packet-tracer tag-servidor">
+  <div class="post-body">
+    <div class="post-top-features">
+          <div class="post-top-share">
+      <i class="fa os-icon-plus share-activator-icon share-activator"></i>
+      <span class="share-activator-label share-activator caption">Compartilhar</span>
+      <div class="os_social-head-w"><div class="os_social"><a class="os_social_twitter_share" href="http://twitter.com/share?url=http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/&amp;text=Blog+dos+Cursos+-+Criando+Servidor+FTP+no+Packet+Tracer+%7C+Blog+Hardware" target="_blank"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/twitter.png" title="Twitter" class="os_social" alt="Tweet about this on Twitter"></a><a class="os_social_pinterest_share" href="javascript:void((function()%7Bvar%20e=document.createElement(&#39;script&#39;);e.setAttribute(&#39;type&#39;,&#39;text/javascript&#39;);e.setAttribute(&#39;charset&#39;,&#39;UTF-8&#39;);e.setAttribute(&#39;src&#39;,&#39;//assets.pinterest.com/js/pinmarklet.js?r=&#39;+Math.random()*99999999);document.body.appendChild(e)%7D)());"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/pinterest.png" title="Pinterest" class="os_social" alt="Pin on Pinterest"></a><a class="os_social_linkedin_share" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/" target="_blank"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/linkedin.png" title="Linkedin" class="os_social" alt="Share on LinkedIn"></a><a class="os_social_google_share" href="https://plus.google.com/share?url=http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/" target="_blank"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/google.png" title="Google+" class="os_social" alt="Share on Google+"></a><a class="os_social_email_share" href="mailto:?Subject=Blog+dos+Cursos+-+Criando+Servidor+FTP+no+Packet+Tracer+%7C+Blog+Hardware&amp;Body=%20http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/email.png" title="Email" class="os_social" alt="Email this to someone"></a><a class="os_social_facebook_share" href="http://www.facebook.com/sharer.php?u=http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/" target="_blank"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/facebook.png" title="Facebook" class="os_social" alt="Share on Facebook"></a></div></div>
+    </div>
+                        <a href="http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/#" class="post-top-qr">
+          <i class="fa os-icon-qrcode"></i>
+          <span class="caption">QR CODE</span>
+        </a>
+        <a href="http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/#" class="post-top-reading-mode hidden-xs" data-message-on="Entrar no Modo de Leitura" data-message-off="Sair do Modo de Leitura">
+          <i class="fa os-icon-eye"></i>
+          <span>Entrar no Modo de Leitura</span>
+        </a>
+                  </div>
+    <h1 class="post-title entry-title"><a href="http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/">Criando Servidor FTP no Packet Tracer</a></h1>
+        <div class="post-meta-top entry-meta">
+      <div class="row">
+
+
+        
+          <div class="col-md-6">
+            <div class="post-date">Publicado em <time class="entry-date updated" datetime="2013-05-15T10:03:43+00:00">15 de maio, 2013</time></div>
+            <div class="post-author">Por <strong class="author vcard"><a href="http://blogdoscursos.com.br/author/edipo/" class="url fn n" rel="author">Édipo Santos</a></strong></div>
+          </div>
+          <div class="col-md-6">
+            <ul class="post-tags"><li><a href="http://blogdoscursos.com.br/tag/ccna/" rel="tag">ccna</a></li><li><a href="http://blogdoscursos.com.br/tag/ftp/" rel="tag">ftp</a></li><li><a href="http://blogdoscursos.com.br/tag/packet-tracer/" rel="tag">packet tracer</a></li><li><a href="http://blogdoscursos.com.br/tag/servidor/" rel="tag">servidor</a></li></ul>            <ul class="post-categories">
+	<li><a href="http://blogdoscursos.com.br/categoria/hardware/" rel="category tag">Hardware</a></li></ul>          </div>
+
+        
+
+      </div>
+    </div>
+               <!-- <a href="http://blogdoscursos.com.br/wp-content/uploads/2013/05/capa4.png" class="figure-link os-lightbox-activator">
+        <figure>-->
+                        <!-- <div class="figure-shade"></div><i class="figure-icon os-icon-thin-098_zoom_in_magnify_plus"></i>-->
+                <!--</figure>
+      </a> -->        <div class="post-content entry-content">
+      
+              <p><a href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/capa.png" class="figure-link os-lightbox-activator"><img class="alignnone size-full wp-image-2032" alt="capa" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/capa.png" width="700" height="400"></a></p>
+<p>Segundo o site&nbsp;wikipedia, um <b>servidor FTP</b>&nbsp; fornece, através de uma&nbsp;rede de computadores, um serviço de acesso para usuários a um&nbsp;disco rígido&nbsp;ou&nbsp;conjunto de arquivos&nbsp;através do protocolo de transferência de arquivos:&nbsp;File Transfer Protocol. Seu acesso pode ser feito por qualquer usuário da rede ou reservado (com pedido de login e senha). O servidor FTP utiliza o protocolo FTP via navegador ou via cliente ftp dedicado.</p>
+<p>Basicamente um servidor FTP é uma máquina (servidor) que possui arquivos que são fornecidos ao usuário da rede que têm acesso a ele por meio de login e senha.</p>
+<p>Para configurar um servidor na prática não é muito&nbsp;difícil, porém faremos primeiro no packet tracer, assim podemos entender o conceito.</p>
+<p>Abra o Packet Tracer e coloque os seguintes equipamentos:</p>
+<p>1 servidor</p>
+<p>1 Switch</p>
+<p>2 máquinas</p>
+<p>Ligue conforme as imagem abaixo:</p>
+<p><a href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/Capturar7.png" class="figure-link os-lightbox-activator"><img class="alignnone size-full wp-image-2009" alt="Capturar" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/Capturar7.png" width="719" height="437"></a></p>
+<p><strong>CONFIGURANDO IP SERVIDOR</strong></p>
+<p>Antes de mais nada devemos definir um ip para o servidor. Para estudo vamos escolher um IP padrão: 192.168.1.254</p>
+<p>Para defini-lo clique no servidor, depois em Desktop, IP configuration:</p>
+<p><a href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/1.png" class="figure-link os-lightbox-activator"><img class="alignnone size-full wp-image-2015" alt="1" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/1.png" width="654" height="517"></a></p>
+<p>Coloque as informações de IP como a imagem abaixo:</p>
+<p><a href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/2.png" class="figure-link os-lightbox-activator"><img class="alignnone size-full wp-image-2016" alt="2" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/2.png" width="656" height="520"></a></p>
+<p>Agora vamos ao FTP…</p>
+<p><strong>CONFIGURANDO FTP NO SERVIDOR</strong></p>
+<p>Clique na aba<strong>&nbsp;Config</strong> e depois <strong>FTP</strong></p>
+<p><a href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/Capturar12.png" class="figure-link os-lightbox-activator"><img class="alignnone size-full wp-image-2010" alt="Capturar1" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/Capturar12.png" width="660" height="521"></a></p>
+<p>No campo <strong>UserName</strong> e <strong>Password</strong> vamos criar um usuário e senha para acessar o servidor FTP. Pode ser qualquer coisa. Vou definir como edipo (usuário) e 123 (senha).</p>
+<p><a href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/Sem-título10.png" class="figure-link os-lightbox-activator"><img class="alignnone size-full wp-image-2012" alt="Sem título" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/Sem-título10.png" width="656" height="523"></a></p>
+<p>Agora habilite as permissões de acesso (neste exemplo vou habilitar todas), depois clique no botão <strong>+</strong> para adicionar o usuário.</p>
+<p><a href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/Sem-título11.png" class="figure-link os-lightbox-activator"><img class="alignnone size-full wp-image-2013" alt="Sem título1" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/Sem-título11.png" width="654" height="523"></a></p>
+<p>Veja que o usuário foi adicionado:</p>
+<p>Você pode adicionar mais para teste.</p>
+<p><a href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/Sem-título22.png" class="figure-link os-lightbox-activator"><img class="alignnone size-full wp-image-2014" alt="Sem título2" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/Sem-título22.png" width="656" height="520"></a></p>
+<p>Ok, basicamente é isso no servidor. Vamos testar em nossa máquina.</p>
+<p><strong>TESTANDO NA MÁQUINA VIA PROMPT DE COMANDO</strong></p>
+<p>Antes de testar vamos definir também um IP para as máquinas:</p>
+<p><strong>Máquina 1: </strong></p>
+<p>IP 192.168.1.1 Máscara 255.255.255.0</p>
+<p><strong>Máquina 2: </strong></p>
+<p>IP 192.168.1.2 Máscara 255.255.255.0</p>
+<p><strong>ACESSANDO SERVIDOR</strong></p>
+<p>Para testar clique numa máquina, desktop e então em prompt de comando.</p>
+<p>E digite o seguinte comando:</p>
+<p>ft ip do servidor</p>
+<p>ftp 192.168.1.254</p>
+<p>Se tudo ocorrer bem será solicitado um login e logo depois uma senha.</p>
+<p>Obs: a senha não aparece é normal.</p>
+<p><a href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/8.png" class="figure-link os-lightbox-activator"><img class="alignnone size-full wp-image-2018" alt="8" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/8.png" width="655" height="521"></a></p>
+<p>Para ver alguns arquivos presente no servidor, digite o comando <strong>dir.</strong></p>
+<p><a href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/9.png" class="figure-link os-lightbox-activator"><img class="alignnone size-full wp-image-2019" alt="9" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/9.png" width="655" height="521"></a></p>
+<p><strong>COPIANDO ARQUIVOS DO SERVIDOR</strong></p>
+<p>Agora vamos copiar o arquivo da linha 4 para nossa máquina. Para isso digite o seguinte comando:</p>
+<p><strong>get c2600-i-mz.122-28.bin</strong></p>
+<p>Se você digitou tudo correto a seguinte mensagem será mostrada:</p>
+<p><a href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/10.png" class="figure-link os-lightbox-activator"><img class="alignnone size-full wp-image-2020" alt="10" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/10.png" width="584" height="142"></a></p>
+<p>Caso tenha digitado errado:</p>
+<p><a href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/11.png" class="figure-link os-lightbox-activator"><img class="alignnone size-full wp-image-2021" alt="11" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/11.png" width="572" height="129"></a></p>
+<p>Pra ver se o arquivo foi realmente copiado, saia do FTP digitando <strong>quit </strong>e depois digite o comando <strong>dir</strong> para ver os arquivos da sua máquina:</p>
+<p><a href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/12.png" class="figure-link os-lightbox-activator"><img class="alignnone size-full wp-image-2022" alt="12" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/12.png" width="581" height="212"></a></p>
+<p><strong>ENVIANDO ARQUIVOS PARA O SERVIDOR</strong></p>
+<p>Para enviar um arquivo da sua máquina para o servidor, use o comando put nome do arquivo:</p>
+<p><strong>put sampleFile.txt</strong></p>
+<p><a href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/13.png" class="figure-link os-lightbox-activator"><img class="alignnone size-full wp-image-2023" alt="13" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/13.png" width="581" height="278"></a></p>
+<p>Veja que o arquivo foi enviado usando o comando dir.</p>
+<p><a href="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/14.png" class="figure-link os-lightbox-activator"><img class="alignnone size-full wp-image-2024" alt="14" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/14.png" width="579" height="381"></a></p>
+<p>É isso aí pessoal…</p>
+<p>Aos poucos vou postando mais tutoriais do packet e laboratórios, isso é muito bom pra quem pretende por exemplo tirar certificação CISCO CCNA.</p>
+<p>Abraço.</p>
+<div class="tptn_counter" id="tptn_counter_2008"><script type="text/javascript" data-cfasync="false" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/saved_resource(2)"></script>(2.939 Visitas na página, 1 visitas hoje)</div>          </div>
+  </div>
+  <div class="post-meta entry-meta">
+    <div class="meta-like">
+      <a href="http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/#" class="zilla-likes" id="zilla-likes-2008" title="Curtir"><i class="os-icon-heart"></i> <span class="zilla-like-count"><span class="zilla-likes-count">4</span> <span class="zilla-likes-postfix"></span></span></a>    </div>
+    <div class="os_social-foot-w hidden-xs"><div class="os_social"><a class="os_social_twitter_share" href="http://twitter.com/share?url=http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/&amp;text=Blog+dos+Cursos+-+Criando+Servidor+FTP+no+Packet+Tracer+%7C+Blog+Hardware" target="_blank"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/twitter.png" title="Twitter" class="os_social" alt="Tweet about this on Twitter"></a><a class="os_social_pinterest_share" href="javascript:void((function()%7Bvar%20e=document.createElement(&#39;script&#39;);e.setAttribute(&#39;type&#39;,&#39;text/javascript&#39;);e.setAttribute(&#39;charset&#39;,&#39;UTF-8&#39;);e.setAttribute(&#39;src&#39;,&#39;//assets.pinterest.com/js/pinmarklet.js?r=&#39;+Math.random()*99999999);document.body.appendChild(e)%7D)());"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/pinterest.png" title="Pinterest" class="os_social" alt="Pin on Pinterest"></a><a class="os_social_linkedin_share" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/" target="_blank"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/linkedin.png" title="Linkedin" class="os_social" alt="Share on LinkedIn"></a><a class="os_social_google_share" href="https://plus.google.com/share?url=http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/" target="_blank"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/google.png" title="Google+" class="os_social" alt="Share on Google+"></a><a class="os_social_email_share" href="mailto:?Subject=Blog+dos+Cursos+-+Criando+Servidor+FTP+no+Packet+Tracer+%7C+Blog+Hardware&amp;Body=%20http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/email.png" title="Email" class="os_social" alt="Email this to someone"></a><a class="os_social_facebook_share" href="http://www.facebook.com/sharer.php?u=http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/" target="_blank"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/facebook.png" title="Facebook" class="os_social" alt="Share on Facebook"></a></div></div>
+  </div>
+
+  <div class="modal fade" id="qrcode-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title">Faça o scan com o seu dispositivo</h4>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <div id="qrcode"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="text-center">
+            <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>                                  <div class="post-navigation-unique">
+              <div class="post-navigation-next">
+                <div class="arrow"><i class="fa os-icon-angle-down"></i></div>
+                <div class="caption">Próximo</div>
+                <div class="navi-link"><a href="http://blogdoscursos.com.br/corrigindo-erro-ao-acessar-twitter-pelo-chrome-no-fedora-15/" rel="next">Corrigindo erro ao acessar Twitter pelo Chrome no Fedora 15</a></div>
+              </div>
+            </div>
+                                          <div class="sidebar-under-post">
+            <div class="row">                <div class="col-md-6 under-post-widget-column">
+                  <div class="widget widget-written-by">
+                    <h4 class="widget-title">Postado por</h4>
+                    <div class="row">
+                      <div class="col-sm-4 col-xs-3">
+                        <figure><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/7.thumbnail1.png" width="88" height="96" alt="Édipo Santos" class="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo"></figure>
+                          
+                          <span class="social-link-page"><!-- .social link autor -->
+             				              				<a href="https://www.facebook.com/edpojc" title="Facebook" target="_blank" id="twitter">
+              				<img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/facebook(1).png" alt="Facebook"></a>
+            				              
+							           					<a href="https://twitter.com/edpojc" title="Twitter" target="_blank" id="twitter">
+              				<img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/twitter(1).png" alt="Twitter"></a>
+            				            			  </span><!-- .social link autor -->
+                      
+                      </div>
+                      <div class="col-sm-8 col-xs-9">
+                        <h5 class="widget-caption author vcard"><a href="http://blogdoscursos.com.br/author/edipo/" class="url fn n" rel="author">Édipo Santos</a></h5>
+                        <div class="widget-content author-description"><p>Tem 26 anos. É formado em Análise e Desenvolvimento de Sistemas pela UNIMONTE, atualmente leciona Hardware e TI na Microcamp de Santos. É apaixonado pelo mundo Linux. Também faz trabalhos como web design e design gráfico. Se considera um músico de bom gosto e adepto a um bom livro de ficção.</p>
+</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                                    <div class="col-md-6 under-post-widget-column">
+                      <div class="widget widget-related-post">
+                        <h4 class="widget-title">Postagem Relacionada</h4>
+                        <div class="row">
+                                                      <div class="col-sm-4 col-xs-3">
+                              <a href="http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/"><figure><img width="150" height="150" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/sliderHome.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="https://i1.wp.com/blogdoscursos.com.br/wp-content/uploads/2018/01/sliderHome.png?resize=150%2C150 150w, https://i1.wp.com/blogdoscursos.com.br/wp-content/uploads/2018/01/sliderHome.png?resize=50%2C50 50w, https://i1.wp.com/blogdoscursos.com.br/wp-content/uploads/2018/01/sliderHome.png?zoom=2&amp;resize=150%2C150 300w, https://i1.wp.com/blogdoscursos.com.br/wp-content/uploads/2018/01/sliderHome.png?zoom=3&amp;resize=150%2C150 450w" sizes="(max-width: 150px) 100vw, 150px"></figure></a>
+                            </div>
+                                                      <div class="col-sm-8 col-xs-9">
+                            <h5 class="widget-caption entry-title"><a href="http://blogdoscursos.com.br/instalar-e-configurar-servidor-dhcp-no-windows-server-2008/">Instalação e configuração de servidor DHCP em Windows Server</a></h5>
+                            <div class="widget-content entry-summary">Tutorial de instalação e configuração de servidor DHCP em Windows Server 2008.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>            </div>
+          </div>
+                
+<div id="disqus_thread"><iframe id="dsq-app143" name="dsq-app143" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 832px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+
+<script type="text/javascript">
+var disqus_url = 'http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/';
+var disqus_identifier = '2008 http://www.bloghardware.microcampsp.com.br/?p=2008';
+var disqus_container_id = 'disqus_thread';
+var disqus_shortname = 'blogdoscursos';
+var disqus_title = "Criando Servidor FTP no Packet Tracer";
+var disqus_config_custom = window.disqus_config;
+var disqus_config = function () {
+    /*
+    All currently supported events:
+    onReady: fires when everything is ready,
+    onNewComment: fires when a new comment is posted,
+    onIdentify: fires when user is authenticated
+    */
+    
+    this.page.remote_auth_s3 = 'W10= e3cef80472772c96bef801a84332e1f8dfb83960 1538558001';
+this.page.api_key = '0eZV1ACdLmDEQ7TqYBsAXYnyYeJDhv9UrJC3ig8vbWCwve4vhnM0nk1ihnRAVRdK';
+this.sso = {
+          name: "Blog dos Cursos",
+          button: "",
+          url: "http://blogdoscursos.com.br/wp-login.php",
+          logout: "http://blogdoscursos.com.br/wp-login.php?action=logout",
+          width: "800",
+          height: "700"
+    };
+    this.language = '';
+        this.callbacks.onReady.push(function () {
+
+        // sync comments in the background so we don't block the page
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = '?cf_action=sync_comments&post_id=2008';
+
+        var firstScript = document.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(script, firstScript);
+    });
+    
+    if (disqus_config_custom) {
+        disqus_config_custom.call(this);
+    }
+};
+
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+      </div>
+    </div>
+
+                  <div class="col-lg-3 visible-lg primary-sidebar-wrapper">
+          <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+            <aside id="search-2" class="widget widget_search"><section>
+	 <form class="search-form" role="search" method="get" id="search-form" action="http://blogdoscursos.com.br/">
+    <label for="s"></label>
+     <input type="search" class="search-field" value="" name="s" id="s" placeholder="Pesquisar...">
+     <input type="submit" class="search-submit" value="" required="">
+     </form></section></aside><aside id="widget_tptn_pop-2" class="widget tptn_posts_list_widget"><h1 class="widget-title">Tópicos mais acessados</h1><div class="tptn_posts  tptn_posts_widget tptn_posts_widget2"><ul><li><a href="http://blogdoscursos.com.br/20-fontes-gratuitas-que-todo-designer-deve-baixar/" class="tptn_link"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/capa3.png" alt="20 fontes gratuitas que todo designer deve baixar" title="20 fontes gratuitas que todo designer deve baixar" width="50" height="50" class="tptn_thumb tptn_featured"></a><span class="tptn_after_thumb"><a href="http://blogdoscursos.com.br/20-fontes-gratuitas-que-todo-designer-deve-baixar/" class="tptn_link"><span class="tptn_title">20 fontes gratuitas que todo designer deve baixar</span></a><span class="tptn_date"> 15 de Maio de 2014</span> </span></li><li><a href="http://blogdoscursos.com.br/criar-pendrive-bootavel-atraves-prompt-de-comando-ms-dos/" class="tptn_link"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/pendrive.jpg" alt="Criar pendrive bootável através do prompt de comando MS-DOS" title="Criar pendrive bootável através do prompt de comando MS-DOS" width="50" height="50" class="tptn_thumb tptn_featured"></a><span class="tptn_after_thumb"><a href="http://blogdoscursos.com.br/criar-pendrive-bootavel-atraves-prompt-de-comando-ms-dos/" class="tptn_link"><span class="tptn_title">Criar pendrive bootável através do prompt de comando MS-DOS</span></a><span class="tptn_date"> 11 de Fevereiro de 2015</span> </span></li><li><a href="http://blogdoscursos.com.br/configuracao-roteamento-rip/" class="tptn_link"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/img84.png" alt="Configuração: Roteamento (RIP)" title="Configuração: Roteamento (RIP)" width="50" height="50" class="tptn_thumb tptn_featured"></a><span class="tptn_after_thumb"><a href="http://blogdoscursos.com.br/configuracao-roteamento-rip/" class="tptn_link"><span class="tptn_title">Configuração: Roteamento (RIP)</span></a><span class="tptn_date"> 6 de Maio de 2015</span> </span></li><li><a href="http://blogdoscursos.com.br/super-pacote-de-ilustracoes-vetores-e-fontes-gratis-da-copa/" class="tptn_link"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/CAPA1.png" alt="Super pacote de ilustrações, vetores e fontes grátis da Copa" title="Super pacote de ilustrações, vetores e fontes grátis da Copa" width="50" height="50" class="tptn_thumb tptn_featured"></a><span class="tptn_after_thumb"><a href="http://blogdoscursos.com.br/super-pacote-de-ilustracoes-vetores-e-fontes-gratis-da-copa/" class="tptn_link"><span class="tptn_title">Super pacote de ilustrações, vetores e fontes grátis da Copa</span></a><span class="tptn_date"> 5 de junho de 2014</span> </span></li><li><a href="http://blogdoscursos.com.br/10-jogos-que-voce-pode-instalar-sem-placa-de-video/" class="tptn_link"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/293a476f.jpg" alt="10 Jogos que você pode instalar sem a placa de vídeo!" title="10 Jogos que você pode instalar sem a placa de vídeo!" width="50" height="50" class="tptn_thumb tptn_featured"></a><span class="tptn_after_thumb"><a href="http://blogdoscursos.com.br/10-jogos-que-voce-pode-instalar-sem-placa-de-video/" class="tptn_link"><span class="tptn_title">10 Jogos que você pode instalar sem a placa de vídeo!</span></a><span class="tptn_date"> 3 de junho de 2015</span> </span></li><li><a href="http://blogdoscursos.com.br/como-criar-etiquetas-no-corel-draw/" class="tptn_link"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/img1-673x4541.png" alt="Como criar etiquetas no Corel DRAW" title="Como criar etiquetas no Corel DRAW" width="50" height="50" class="tptn_thumb tptn_featured"></a><span class="tptn_after_thumb"><a href="http://blogdoscursos.com.br/como-criar-etiquetas-no-corel-draw/" class="tptn_link"><span class="tptn_title">Como criar etiquetas no Corel DRAW</span></a><span class="tptn_date"> 27 de junho de 2013</span> </span></li><li><a href="http://blogdoscursos.com.br/como-ter-um-bom-curriculo/" class="tptn_link"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/9-217x3001.png" alt="Procurando emprego? Como ter um bom currículo?" title="Procurando emprego? Como ter um bom currículo?" width="50" height="50" class="tptn_thumb tptn_featured"></a><span class="tptn_after_thumb"><a href="http://blogdoscursos.com.br/como-ter-um-bom-curriculo/" class="tptn_link"><span class="tptn_title">Procurando emprego? Como ter um bom currículo?</span></a><span class="tptn_date"> 19 de Fevereiro de 2013</span> </span></li><li><a href="http://blogdoscursos.com.br/excel-somarproduto-condicional/" class="tptn_link"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/9(1).png" alt="Excel: SOMARPRODUTO CONDICIONAL" title="Excel: SOMARPRODUTO CONDICIONAL" width="50" height="50" class="tptn_thumb tptn_featured"></a><span class="tptn_after_thumb"><a href="http://blogdoscursos.com.br/excel-somarproduto-condicional/" class="tptn_link"><span class="tptn_title">Excel: SOMARPRODUTO CONDICIONAL</span></a><span class="tptn_date"> 5 de Maio de 2016</span> </span></li><li><a href="http://blogdoscursos.com.br/macro-no-excel/" class="tptn_link"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/1.jpg" alt="Criando uma Macro no Excel 2013" title="Criando uma Macro no Excel 2013" width="50" height="50" class="tptn_thumb tptn_featured"></a><span class="tptn_after_thumb"><a href="http://blogdoscursos.com.br/macro-no-excel/" class="tptn_link"><span class="tptn_title">Criando uma Macro no Excel 2013</span></a><span class="tptn_date"> 17 de Março de 2015</span> </span></li><li><a href="http://blogdoscursos.com.br/descobrindo-ou-quebrando-senha-do-windows-com-esr/" class="tptn_link"><img src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/1111.png" alt="Descobrindo ou quebrando senha do Windows com ESR" title="Descobrindo ou quebrando senha do Windows com ESR" width="50" height="50" class="tptn_thumb tptn_featured"></a><span class="tptn_after_thumb"><a href="http://blogdoscursos.com.br/descobrindo-ou-quebrando-senha-do-windows-com-esr/" class="tptn_link"><span class="tptn_title">Descobrindo ou quebrando senha do Windows com ESR</span></a><span class="tptn_date"> 26 de Março de 2014</span> </span></li></ul><div class="tptn_clear"></div></div></aside><aside id="tag_cloud-2" class="widget widget_tag_cloud"><h1 class="widget-title">Tags</h1><div class="tagcloud"><a href="http://blogdoscursos.com.br/tag/abc/" class="tag-cloud-link tag-link-31 tag-link-position-1" style="font-size: 14.533333333333pt;" aria-label="abc (18 itens)">abc</a>
+<a href="http://blogdoscursos.com.br/tag/android/" class="tag-cloud-link tag-link-76 tag-link-position-2" style="font-size: 19.433333333333pt;" aria-label="android (30 itens)">android</a>
+<a href="http://blogdoscursos.com.br/tag/aplicativos/" class="tag-cloud-link tag-link-88 tag-link-position-3" style="font-size: 8pt;" aria-label="aplicativos (9 itens)">aplicativos</a>
+<a href="http://blogdoscursos.com.br/tag/boot/" class="tag-cloud-link tag-link-165 tag-link-position-4" style="font-size: 8.9333333333333pt;" aria-label="BOOT (10 itens)">BOOT</a>
+<a href="http://blogdoscursos.com.br/tag/corel-draw/" class="tag-cloud-link tag-link-326 tag-link-position-5" style="font-size: 8.9333333333333pt;" aria-label="Corel Draw (10 itens)">Corel Draw</a>
+<a href="http://blogdoscursos.com.br/tag/dicas-2/" class="tag-cloud-link tag-link-408 tag-link-position-6" style="font-size: 12.666666666667pt;" aria-label="dicas (15 itens)">dicas</a>
+<a href="http://blogdoscursos.com.br/tag/english/" class="tag-cloud-link tag-link-481 tag-link-position-7" style="font-size: 8pt;" aria-label="english (9 itens)">english</a>
+<a href="http://blogdoscursos.com.br/tag/excel/" class="tag-cloud-link tag-link-517 tag-link-position-8" style="font-size: 12.2pt;" aria-label="excel (14 itens)">excel</a>
+<a href="http://blogdoscursos.com.br/tag/facebook/" class="tag-cloud-link tag-link-530 tag-link-position-9" style="font-size: 12.2pt;" aria-label="Facebook (14 itens)">Facebook</a>
+<a href="http://blogdoscursos.com.br/tag/formatacao/" class="tag-cloud-link tag-link-575 tag-link-position-10" style="font-size: 8.9333333333333pt;" aria-label="formatação (10 itens)">formatação</a>
+<a href="http://blogdoscursos.com.br/tag/games/" class="tag-cloud-link tag-link-602 tag-link-position-11" style="font-size: 16.4pt;" aria-label="Games (22 itens)">Games</a>
+<a href="http://blogdoscursos.com.br/tag/google/" class="tag-cloud-link tag-link-618 tag-link-position-12" style="font-size: 11.5pt;" aria-label="google (13 itens)">google</a>
+<a href="http://blogdoscursos.com.br/tag/hardware-2/" class="tag-cloud-link tag-link-637 tag-link-position-13" style="font-size: 13.366666666667pt;" aria-label="hardware (16 itens)">hardware</a>
+<a href="http://blogdoscursos.com.br/tag/html/" class="tag-cloud-link tag-link-663 tag-link-position-14" style="font-size: 8.9333333333333pt;" aria-label="HTML (10 itens)">HTML</a>
+<a href="http://blogdoscursos.com.br/tag/informatica-2/" class="tag-cloud-link tag-link-685 tag-link-position-15" style="font-size: 8pt;" aria-label="informática (9 itens)">informática</a>
+<a href="http://blogdoscursos.com.br/tag/ingles/" class="tag-cloud-link tag-link-687 tag-link-position-16" style="font-size: 13.366666666667pt;" aria-label="inglês (16 itens)">inglês</a>
+<a href="http://blogdoscursos.com.br/tag/instalacao/" class="tag-cloud-link tag-link-694 tag-link-position-17" style="font-size: 10.566666666667pt;" aria-label="instalação (12 itens)">instalação</a>
+<a href="http://blogdoscursos.com.br/tag/internet/" class="tag-cloud-link tag-link-702 tag-link-position-18" style="font-size: 8pt;" aria-label="internet (9 itens)">internet</a>
+<a href="http://blogdoscursos.com.br/tag/jogos/" class="tag-cloud-link tag-link-727 tag-link-position-19" style="font-size: 8.9333333333333pt;" aria-label="Jogos (10 itens)">Jogos</a>
+<a href="http://blogdoscursos.com.br/tag/linux/" class="tag-cloud-link tag-link-754 tag-link-position-20" style="font-size: 17.333333333333pt;" aria-label="linux (24 itens)">linux</a>
+<a href="http://blogdoscursos.com.br/tag/malware/" class="tag-cloud-link tag-link-786 tag-link-position-21" style="font-size: 8.9333333333333pt;" aria-label="malware (10 itens)">malware</a>
+<a href="http://blogdoscursos.com.br/tag/manutencao-2/" class="tag-cloud-link tag-link-793 tag-link-position-22" style="font-size: 9.8666666666667pt;" aria-label="manutenção (11 itens)">manutenção</a>
+<a href="http://blogdoscursos.com.br/tag/microsoft/" class="tag-cloud-link tag-link-825 tag-link-position-23" style="font-size: 13.366666666667pt;" aria-label="microsoft (16 itens)">microsoft</a>
+<a href="http://blogdoscursos.com.br/tag/musica-2/" class="tag-cloud-link tag-link-870 tag-link-position-24" style="font-size: 9.8666666666667pt;" aria-label="música (11 itens)">música</a>
+<a href="http://blogdoscursos.com.br/tag/office/" class="tag-cloud-link tag-link-897 tag-link-position-25" style="font-size: 9.8666666666667pt;" aria-label="office (11 itens)">office</a>
+<a href="http://blogdoscursos.com.br/tag/pendrive/" class="tag-cloud-link tag-link-936 tag-link-position-26" style="font-size: 9.8666666666667pt;" aria-label="pendrive (11 itens)">pendrive</a>
+<a href="http://blogdoscursos.com.br/tag/photoshop/" class="tag-cloud-link tag-link-947 tag-link-position-27" style="font-size: 22pt;" aria-label="photoshop (39 itens)">photoshop</a>
+<a href="http://blogdoscursos.com.br/tag/php/" class="tag-cloud-link tag-link-950 tag-link-position-28" style="font-size: 8pt;" aria-label="PHP (9 itens)">PHP</a>
+<a href="http://blogdoscursos.com.br/tag/programas/" class="tag-cloud-link tag-link-1014 tag-link-position-29" style="font-size: 11.5pt;" aria-label="programas (13 itens)">programas</a>
+<a href="http://blogdoscursos.com.br/tag/programacao/" class="tag-cloud-link tag-link-1011 tag-link-position-30" style="font-size: 11.5pt;" aria-label="programação (13 itens)">programação</a>
+<a href="http://blogdoscursos.com.br/tag/seguranca-2/" class="tag-cloud-link tag-link-1100 tag-link-position-31" style="font-size: 17.566666666667pt;" aria-label="segurança (25 itens)">segurança</a>
+<a href="http://blogdoscursos.com.br/tag/senha/" class="tag-cloud-link tag-link-1106 tag-link-position-32" style="font-size: 8.9333333333333pt;" aria-label="senha (10 itens)">senha</a>
+<a href="http://blogdoscursos.com.br/tag/tecnologia/" class="tag-cloud-link tag-link-1206 tag-link-position-33" style="font-size: 17.566666666667pt;" aria-label="tecnologia (25 itens)">tecnologia</a>
+<a href="http://blogdoscursos.com.br/tag/ti/" class="tag-cloud-link tag-link-2120 tag-link-position-34" style="font-size: 12.2pt;" aria-label="TI (14 itens)">TI</a>
+<a href="http://blogdoscursos.com.br/tag/tutorial/" class="tag-cloud-link tag-link-1262 tag-link-position-35" style="font-size: 19.433333333333pt;" aria-label="tutorial (30 itens)">tutorial</a>
+<a href="http://blogdoscursos.com.br/tag/ubuntu/" class="tag-cloud-link tag-link-1270 tag-link-position-36" style="font-size: 11.5pt;" aria-label="ubuntu (13 itens)">ubuntu</a>
+<a href="http://blogdoscursos.com.br/tag/usb/" class="tag-cloud-link tag-link-1282 tag-link-position-37" style="font-size: 8.9333333333333pt;" aria-label="usb (10 itens)">usb</a>
+<a href="http://blogdoscursos.com.br/tag/video/" class="tag-cloud-link tag-link-1307 tag-link-position-38" style="font-size: 10.566666666667pt;" aria-label="video (12 itens)">video</a>
+<a href="http://blogdoscursos.com.br/tag/virtualbox/" class="tag-cloud-link tag-link-1312 tag-link-position-39" style="font-size: 8.9333333333333pt;" aria-label="virtualbox (10 itens)">virtualbox</a>
+<a href="http://blogdoscursos.com.br/tag/virus/" class="tag-cloud-link tag-link-1315 tag-link-position-40" style="font-size: 12.666666666667pt;" aria-label="virus (15 itens)">virus</a>
+<a href="http://blogdoscursos.com.br/tag/web-design/" class="tag-cloud-link tag-link-1341 tag-link-position-41" style="font-size: 15.466666666667pt;" aria-label="web design (20 itens)">web design</a>
+<a href="http://blogdoscursos.com.br/tag/windows/" class="tag-cloud-link tag-link-1355 tag-link-position-42" style="font-size: 16.4pt;" aria-label="windows (22 itens)">windows</a>
+<a href="http://blogdoscursos.com.br/tag/windows7/" class="tag-cloud-link tag-link-1368 tag-link-position-43" style="font-size: 12.666666666667pt;" aria-label="windows7 (15 itens)">windows7</a>
+<a href="http://blogdoscursos.com.br/tag/windows-7/" class="tag-cloud-link tag-link-1356 tag-link-position-44" style="font-size: 16.4pt;" aria-label="windows 7 (22 itens)">windows 7</a>
+<a href="http://blogdoscursos.com.br/tag/windows-8/" class="tag-cloud-link tag-link-1358 tag-link-position-45" style="font-size: 14.066666666667pt;" aria-label="windows 8 (17 itens)">windows 8</a></div>
+</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categorias</h1>		<ul>
+	<li class="cat-item cat-item-2068"><a href="http://blogdoscursos.com.br/categoria/abc-espanhol/">ABC – Espanhol</a>
+</li>
+	<li class="cat-item cat-item-2"><a href="http://blogdoscursos.com.br/categoria/curso-abc/">ABC – Inglês</a>
+<ul class="children">
+	<li class="cat-item cat-item-3"><a href="http://blogdoscursos.com.br/categoria/curso-abc/curiosidades/">Curiosidades</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://blogdoscursos.com.br/categoria/curso-abc/datas-comemorativas/">Datas Comemorativas</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://blogdoscursos.com.br/categoria/curso-abc/dicas-abc/">Dicas</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://blogdoscursos.com.br/categoria/curso-abc/musica/">Música</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-2122"><a href="http://blogdoscursos.com.br/categoria/games/">Games</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://blogdoscursos.com.br/categoria/hardware/">Hardware</a>
+<ul class="children">
+	<li class="cat-item cat-item-1482"><a href="http://blogdoscursos.com.br/categoria/hardware/linux-hardware/">Linux</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://blogdoscursos.com.br/categoria/hardware/manutencao/">Manutenção</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="http://blogdoscursos.com.br/categoria/hardware/seguranca/">Segurança</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://blogdoscursos.com.br/categoria/informatica/">Informática</a>
+<ul class="children">
+	<li class="cat-item cat-item-10"><a href="http://blogdoscursos.com.br/categoria/informatica/produtividade-informatica/">Produtividade</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://blogdoscursos.com.br/categoria/informatica/tutorial-informatica/">Tutorial</a>
+</li>
+	<li class="cat-item cat-item-1443"><a href="http://blogdoscursos.com.br/categoria/informatica/info-windows/">Windows</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://blogdoscursos.com.br/categoria/sem-categoria/">Sem categoria</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="http://blogdoscursos.com.br/categoria/ti/">TI</a>
+<ul class="children">
+	<li class="cat-item cat-item-17"><a href="http://blogdoscursos.com.br/categoria/ti/software-ti/">Software</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://blogdoscursos.com.br/categoria/ti/tutorial-ti/">Tutorial</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-2436"><a href="http://blogdoscursos.com.br/categoria/variedades/">Variedades</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="http://blogdoscursos.com.br/categoria/webdesign/">Web Design</a>
+<ul class="children">
+	<li class="cat-item cat-item-16"><a href="http://blogdoscursos.com.br/categoria/webdesign/produtividade-web/">Produtividade</a>
+</li>
+	<li class="cat-item cat-item-18"><a href="http://blogdoscursos.com.br/categoria/webdesign/tutorial-web/">Tutorial</a>
+</li>
+</ul>
+</li>
+		</ul>
+</aside>          </div>
+        </div>
+            </div>
+</div>
+
+<a href="http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/#" class="os-back-to-top"></a>	
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-info">
+      <div class="site-footer-i">
+        Blog dos Cursos - Copyright. 2017      </div>
+    </div>
+  </footer>
+  <div class="display-type"></div>
+            <script type="text/javascript">
+        // <![CDATA[
+        var disqus_shortname = 'blogdoscursos';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1 && nodes[i].parentNode.tagName == 'A') {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        // ]]>
+        </script>
+        <script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/photon.js.download"></script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/devicepx-jetpack.js.download"></script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/jquery.flexslider.js.download"></script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/jquery.magnific-popup.min.js.download"></script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/init-lightbox.js.download"></script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/comment-reply.min.js.download"></script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/jquery.ba-throttle-debounce.min.js.download"></script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/infinite-scroll.js.download"></script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/imagesloaded.pkgd.min.js.download"></script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/isotope.pkgd.min.js.download"></script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/jquery.mousewheel.js.download"></script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/perfect-scrollbar.js.download"></script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/qrcode.min.js.download"></script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/transition.js.download"></script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/modal.js.download"></script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/functions.js.download"></script>
+<script type="text/javascript" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/wp-embed.min.js.download"></script>
+
+
+<!-- Quick Cache file path: /cache/quick-cache/cache/http/blogdoscursos-com-br/criando-servidor-ftp-no-packet-tracer.html -->
+<!-- Quick Cache file built for (http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/) in 2.21501 seconds, on: Oct 3rd, 2018 @ 9:13 am UTC. -->
+<!-- This Quick Cache file will auto-expire (and be rebuilt) on: Oct 10th, 2018 @ 9:13 am UTC (based on your configured expiration time). -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- Quick Cache fully functional :-) Cache file served for (http://blogdoscursos.com.br/criando-servidor-ftp-no-packet-tracer/) in 0.00144 seconds, on: Oct 5th, 2018 @ 3:48 pm UTC. --><iframe style="display: none;" src="./Blog dos Cursos _ Criando Servidor FTP no Packet Tracer_files/saved_resource(3).html"></iframe></body></html>

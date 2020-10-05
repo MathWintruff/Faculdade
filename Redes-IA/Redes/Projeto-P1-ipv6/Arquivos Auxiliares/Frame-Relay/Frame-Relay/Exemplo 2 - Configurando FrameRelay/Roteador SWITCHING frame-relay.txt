@@ -1,0 +1,93 @@
+! Configuration by Bento ;) 
+! mailto:impalador@gmail.com
+! Esta configuracao diz respeito ao provedor que proporciona o ckt frame-relay
+
+configure terminal
+	hostname Sw_Frame-relay
+	service password-encryption
+	enable secret cisco
+	banner motd "Router_A - Switch Comutador Frame-Relay" 
+	
+	line console 0
+		password cisco
+		login
+		exit
+
+	line vty 0 4
+		password cisco
+		login
+		exit
+	!!
+	! Ativa Modo FRAME-RELAY SWITCHING
+	!!
+	frame-relay switching
+
+	
+	!!
+	! De onde vem os ckts virtuais
+	!!
+	interface s0/0
+		no ip address
+		encapsulation frame-relay
+		clockrate 512000
+		
+		! Frame-relay
+		!frame-relay intf-type dce
+		frame-relay route 100 interface s0/1 101
+		frame-relay route 200 interface s0/2 201
+		frame-relay route 300 interface s0/3 301
+
+		description "Interface que chega os links virtuais from: POA."
+		no shutdown		
+		exit
+
+	!!
+	! Nó - NH
+	!!
+	interface s0/1
+		no ip address
+		encapsulation frame-relay
+		clockrate 512000
+		
+		! Frame-relay
+		frame-relay intf-type dce
+		frame-relay route 101 interface s0/0 100
+
+		description "CKT virtual -> NH"
+		no shutdown
+		exit
+
+	!!
+	! Nó - Caxias
+	!!
+	interface s0/2
+		no ip address
+		encapsulation frame-relay
+		clockrate 512000
+		
+		! Frame-relay
+		frame-relay intf-type dce
+		frame-relay route 201 interface s0/0 200
+
+		description "CKT virtual -> Caxias"
+		no shutdown
+		exit
+
+	!!
+	! Nó - Pelotas
+	!!
+	interface s0/3
+		no ip address
+		encapsulation frame-relay
+		clockrate 512000
+		
+		! Frame-relay
+		frame-relay intf-type dce
+		frame-relay route 301 interface s0/0 300
+
+		description "CKT virtual -> Pelotas"
+		no shutdown
+		exit
+	
+	exit
+copy running-config startup-config

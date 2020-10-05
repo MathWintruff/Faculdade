@@ -1,0 +1,65 @@
+! Configuration by Bento ;) 
+! mailto:impalador@gmail.com
+
+configure terminal
+	hostname R_Caxias
+	service password-encryption
+	enable secret cisco
+	banner motd "R_Caxias - Local: Caxias" 
+	
+	line console 0
+		password cisco
+		login
+		exit
+
+	line vty 0 4
+		password cisco
+		login
+		exit
+
+	int f0/0
+		ip address 192.168.30.1 255.255.255.0
+		bandwidth 100000
+		no shutdown
+
+	!!
+	! Conexao FRAME-RELAY proveniente da matriz
+	!!
+	interface s0/0
+		no ip address
+		encapsulation frame-relay
+		description "CKt virtual from: POA (SW)" 
+		no shutdown
+		exit
+
+
+	!!
+	! Nó - Caxias
+	!!
+	interface s0/0.201 point-to-point
+		ip address 172.16.2.2 255.255.255.252	
+		frame-relay interface-dlci 201
+		description "CKT virtual -> Caxias"
+		bandwidth 56
+		no shutdown
+		exit
+	
+	! Roteamento Dinamico via EIGRP
+	router eigrp 10
+	no auto-summary
+	network 192.168.30.0
+	network 172.16.2.0
+	exit
+	
+	!!
+	! Roteamento estatico
+	!! 
+	!ip route 192.168.20.0 255.255.255.0 172.16.2.1
+
+
+
+	exit
+	
+	
+
+copy running-config startup-config

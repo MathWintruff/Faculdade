@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)http://www.dltec.com.br/blog/cisco/topologias-tipicas-em-redes-wan-frame-relay/ -->
+<html lang="pt-BR" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" class="no-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<link rel="dns-prefetch" href="http://themes.googleusercontent.com/">
+	<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+
+	
+<title>Topologias típicas em redes WAN Frame-relay | Blog da DlteC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="template" content="Épico 1.4.3">
+<meta name="generator" content="WordPress 4.9.3">
+
+<!-- This site is optimized with the Yoast SEO plugin v5.6.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Nesse artigo vamos estudar as principais topologias do Frame-relay e suas principais aplicações práticas. O Frame-relay pode ser cobrado no CCNA e CCNP R&amp;S.">
+<link rel="canonical" href="http://www.dltec.com.br/blog/cisco/topologias-tipicas-em-redes-wan-frame-relay/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Topologias típicas em redes WAN Frame-relay | Blog da DlteC">
+<meta property="og:description" content="Nesse artigo vamos estudar as principais topologias do Frame-relay e suas principais aplicações práticas. O Frame-relay pode ser cobrado no CCNA e CCNP R&amp;S.">
+<meta property="og:url" content="http://www.dltec.com.br/blog/cisco/topologias-tipicas-em-redes-wan-frame-relay/">
+<meta property="og:site_name" content="Blog da DlteC">
+<meta property="article:author" content="https://www.facebook.com/prof.marcelo.nascimento.dltec">
+<meta property="article:section" content="Cisco">
+<meta property="article:published_time" content="2013-07-26T22:13:27+00:00">
+<meta property="article:modified_time" content="2015-08-12T10:36:10+00:00">
+<meta property="og:updated_time" content="2015-08-12T10:36:10+00:00">
+<meta property="fb:admins" content="100000670551739">
+<meta property="og:image" content="http://www.dltec.com.br/blog/wp-content/uploads/2011/11/topologia-splihorizon.png">
+<meta property="og:image:width" content="540">
+<meta property="og:image:height" content="335">
+<script async="" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/saved_resource"></script><script src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/343445786046622" async=""></script><script src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/854153414597248" async=""></script><script src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/131764423949350" async=""></script><script async="" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/fbevents.js.download"></script><script async="" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/analytics.js.download"></script><script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"http:\/\/www.dltec.com.br\/blog\/","name":"Blog da DlteC","potentialAction":{"@type":"SearchAction","target":"http:\/\/www.dltec.com.br\/blog\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="http://maxcdn.bootstrapcdn.com/">
+<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Feed para Blog da DlteC »" href="http://www.dltec.com.br/blog/feed/">
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Blog da DlteC »" href="http://www.dltec.com.br/blog/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Blog da DlteC » Topologias típicas em redes WAN Frame-relay" href="http://www.dltec.com.br/blog/cisco/topologias-tipicas-em-redes-wan-frame-relay/feed/">
+<link rel="pingback" href="http://www.dltec.com.br/blog/xmlrpc.php">
+<!-- This site uses the Google Analytics by MonsterInsights plugin v6.2.4 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<script type="text/javascript" data-cfasync="false">
+		var disableStr = 'ga-disable-UA-9930071-8';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+	__gaTracker('create', 'UA-9930071-8', 'auto');
+	__gaTracker('set', 'forceSSL', true);
+	__gaTracker('send','pageview');
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.dltec.com.br\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.3"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="epico_global_assets-epico_capture_styles-css" href="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/capture-styles-min.css" type="text/css" media="all">
+<link rel="stylesheet" id="gallery-css" href="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/gallery.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="epico-icons-css" href="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="parent-css" href="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="style-css" href="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/style.css" type="text/css" media="all">
+<style id="style-inline-css" type="text/css">
+
+			.page-template-landing[class*="epc-s"] {
+				background: #FFFFFF;
+			}
+
+			.page-template-landing[class*="epc-s"] #page {
+				border-top: none !important
+			}
+</style>
+<link rel="stylesheet" id="epico-style-5-css" href="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/style5.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="epico-fonts-sourcesans-css" href="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/css" type="text/css" media="all">
+<script type="text/javascript" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/jquery-migrate.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"false","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls","inbound_paths":"","home_url":"http:\/\/www.dltec.com.br\/blog","track_download_as":"event","internal_label":"int","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/frontend.min.js.download"></script>
+<link rel="https://api.w.org/" href="http://www.dltec.com.br/blog/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.dltec.com.br/blog/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.dltec.com.br/blog/wp-includes/wlwmanifest.xml"> 
+<link rel="shortlink" href="http://www.dltec.com.br/blog/?p=3486">
+<link rel="alternate" type="application/json+oembed" href="http://www.dltec.com.br/blog/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.dltec.com.br%2Fblog%2Fcisco%2Ftopologias-tipicas-em-redes-wan-frame-relay%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://www.dltec.com.br/blog/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.dltec.com.br%2Fblog%2Fcisco%2Ftopologias-tipicas-em-redes-wan-frame-relay%2F&amp;format=xml">
+<!-- Favicon Rotator -->
+<!-- End Favicon Rotator -->
+<link rel="stylesheet" type="text/css" href="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/jay.css">
+<script type="text/javascript" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/jay.js.download"></script><link rel="stylesheet" type="text/css" href="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/jquery.galleryview-3.0.css">
+<script type="text/javascript" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/jquery.easing.1.3.js.download"></script>
+<script type="text/javascript" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/jquery.timers-1.2.js.download"></script>
+<script type="text/javascript" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/jquery.galleryview-3.0.min.js.download"></script><link rel="stylesheet" type="text/css" href="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/jquery-ui-1.8.9.custom.css">
+<!--BEGIN: TRACKING CODE MANAGER BY INTELLYWP.COM IN HEAD//-->
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '131764423949350');
+fbq('init', '854153414597248');
+fbq('init', '343445786046622');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=131764423949350&ev=PageView&noscript=1"
+/></noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+
+<script>
+    function fbtimed() {
+        fbq('track', 'viewBlog');
+    }
+    setTimeout("fbtimed()", 15000); // after 15sec
+</script>
+<!--END: https://wordpress.org/plugins/tracking-code-manager IN HEAD//--><style type="text/css">
+
+	#sidebar-primary .widget_epico_pop-id {
+		background-color: #3B4E55 !important;
+		color: #95A9B1 !important;
+		border-bottom: 10px solid #3B4E55 !important;
+		}
+
+	ul.populares-list a.populares-link {
+		color: #95A9B1 !important;
+		}
+
+	h3.populares-title {
+		background: #2F3F45 !important;
+		color: #95A9B1 !important;
+		}
+
+	h3.populares-title:before {
+		color: #00C7C0 !important;
+		}
+
+	ul.populares-list li:before {
+		color: rgba(0, 0, 0, 0.2) !important;
+		}
+
+	ul.populares-list li:hover:before {
+		color: rgba(0, 0, 0, 0.4) !important;
+		}
+
+
+	#cw-captura-topo {
+		border: 0px;
+		background-color: #3E4C4F; !important
+		}
+
+	#cw-captura-topo.fw.capture-wrap .capture-form {
+		border-bottom: 10px solid #B3C1C7 !important;
+		}
+
+	.epc-s4.plural #cw-captura-topo.fw,
+	.epc-s5.plural #cw-captura-topo.fw,
+	.epc-s6.plural #cw-captura-topo.fw {
+		border-bottom: none;
+		}
+
+	#cw-captura-topo .capture:nth-child(2) {
+		background-color: #344146 !important;
+		}
+
+	#cw-captura-topo .capture .capture-title {
+		color: #687E87 !important;
+		}
+
+	#cw-captura-topo .capture .capture-icon i:before,
+	#cw-captura-topo .capture-inner .capture-iconinner i:before {
+		color: #B3C1C7 !important;
+		text-shadow: none !important;
+		}
+
+	#cw-captura-topo .capture .capture-intro {
+		color: #687E87 !important;
+		}
+
+	#cw-captura-topo .capture .capture-intro,
+	#cw-captura-topo .capture .capture-intro * {
+		color: #687E87;
+		}
+
+	#cw-captura-topo .capture .capture-notice,
+	#cw-captura-topo .capture .capture-notice * {
+		color: #DDE3E6;
+		}
+
+	#cw-captura-topo.ip .capture .capture-notice,
+	#cw-captura-topo.ip .capture .capture-notice * {
+		color: #687E87;
+		}
+
+	#cw-captura-topo .capture form .uf-email {
+		background-color: #FFFFFF;
+		border: 1px solid rgba(0,0,0,0.2);
+		color: #687E87 !important;
+		}
+
+	#cw-captura-topo .capture form .uf-email:focus {
+		box-shadow: 0px 0px 10px 0px #FF613D;
+		background-color: #FFFFFF;
+		border: 1px solid rgba(0,0,0,0.2);
+		}
+
+	#cw-captura-topo .capture form  .uf-submit {
+		background-color: #FF613D !important;
+		color: #FFFFFF;
+		}
+
+	#cw-captura-topo .capture form .uf-submit:hover {
+		background-color: #FF7657 !important;
+		}
+
+	#cw-captura-topo .uf-arrow svg polygon {
+		fill: #00C7C0 !important;
+		}
+	#cw-captura-topo .capture-inner:last-child {
+		background-color: #3E4C4F;
+		}
+
+	#cw-capture-lateral {
+		border: 0px;
+		background-color: #FFFFFF; !important
+		}
+
+	#cw-capture-lateral.fw.capture-wrap .capture-form {
+		border-bottom: 10px solid #B3C1C7 !important;
+		}
+
+	.epc-s4.plural #cw-capture-lateral.fw,
+	.epc-s5.plural #cw-capture-lateral.fw,
+	.epc-s6.plural #cw-capture-lateral.fw {
+		border-bottom: none;
+		}
+
+	#cw-capture-lateral .capture:nth-child(2) {
+		background-color: #EFF1F1 !important;
+		}
+
+	#cw-capture-lateral .capture .capture-title {
+		color: #687E87 !important;
+		}
+
+	#cw-capture-lateral .capture .capture-icon i:before,
+	#cw-capture-lateral .capture-inner .capture-iconinner i:before {
+		color: #B3C1C7 !important;
+		text-shadow: none !important;
+		}
+
+	#cw-capture-lateral .capture .capture-intro {
+		color: #687E87 !important;
+		}
+
+	#cw-capture-lateral .capture .capture-intro,
+	#cw-capture-lateral .capture .capture-intro * {
+		color: #687E87;
+		}
+
+	#cw-capture-lateral .capture .capture-notice,
+	#cw-capture-lateral .capture .capture-notice * {
+		color: #687E87;
+		}
+
+	#cw-capture-lateral.ip .capture .capture-notice,
+	#cw-capture-lateral.ip .capture .capture-notice * {
+		color: #687E87;
+		}
+
+	#cw-capture-lateral .capture form .uf-email {
+		background-color: #FFFFFF;
+		border: 1px solid rgba(0,0,0,0.2);
+		color: #687E87 !important;
+		}
+
+	#cw-capture-lateral .capture form .uf-email:focus {
+		box-shadow: 0px 0px 10px 0px #FF613D;
+		background-color: #FFFFFF;
+		border: 1px solid rgba(0,0,0,0.2);
+		}
+
+	#cw-capture-lateral .capture form  .uf-submit {
+		background-color: #FF613D !important;
+		color: #FFFFFF;
+		}
+
+	#cw-capture-lateral .capture form .uf-submit:hover {
+		background-color: #FF7657 !important;
+		}
+
+	#cw-capture-lateral .uf-arrow svg polygon {
+		fill: #00C7C0 !important;
+		}
+	#cw-capture-lateral .capture-inner:last-child {
+		background-color: #FFFFFF;
+		}
+	#cw-capture-lateral.sb .capture-close i {
+		color: #00C7C0 !important;
+		}
+
+	#cw-capture-lateral.sb .capture-close i:hover {
+		color: #FF613D !important;
+		}
+
+	#cw-capture-lateral.sb {
+		border-bottom: 10px solid #B3C1C7;
+		background-color: #FFFFFF;
+		}
+
+	#cw-capture-lateral.sb .capture-form {
+		border-bottom: 0px !important;
+		}
+
+	#cw-capture-lateral.sb .capture form .uf-submit {
+		height: 48px;
+		line-height: 48px;
+		}
+
+	#cw-capture-lateral.sb .capture .uf-icon:after { top: 15px; }
+
+	@media screen and (min-width:680px) {
+		#cw-capture-lateral.sb .uf-icon:after { top: 14px }
+		}
+
+	#cw-capture-artigo {
+		border: 0px;
+		background-color: #374447; !important
+		}
+
+	#cw-capture-artigo.fw.capture-wrap .capture-form {
+		border-bottom: 10px solid #B3C1C7 !important;
+		}
+
+	.epc-s4.plural #cw-capture-artigo.fw,
+	.epc-s5.plural #cw-capture-artigo.fw,
+	.epc-s6.plural #cw-capture-artigo.fw {
+		border-bottom: none;
+		}
+
+	#cw-capture-artigo .capture:nth-child(2) {
+		background-color: #344146 !important;
+		}
+
+	#cw-capture-artigo .capture .capture-title {
+		color: #687E87 !important;
+		}
+
+	#cw-capture-artigo .capture .capture-icon i:before,
+	#cw-capture-artigo .capture-inner .capture-iconinner i:before {
+		color: #FE5F3C !important;
+		text-shadow: none !important;
+		}
+
+	#cw-capture-artigo .capture .capture-intro {
+		color: #687E87 !important;
+		}
+
+	#cw-capture-artigo .capture .capture-intro,
+	#cw-capture-artigo .capture .capture-intro * {
+		color: #687E87;
+		}
+
+	#cw-capture-artigo .capture .capture-notice,
+	#cw-capture-artigo .capture .capture-notice * {
+		color: #687E87;
+		}
+
+	#cw-capture-artigo.ip .capture .capture-notice,
+	#cw-capture-artigo.ip .capture .capture-notice * {
+		color: #687E87;
+		}
+
+	#cw-capture-artigo .capture form .uf-email {
+		background-color: #FFFFFF;
+		border: 1px solid rgba(0,0,0,0.2);
+		color: #687E87 !important;
+		}
+
+	#cw-capture-artigo .capture form .uf-email:focus {
+		box-shadow: 0px 0px 10px 0px #FF613D;
+		background-color: #FFFFFF;
+		border: 1px solid rgba(0,0,0,0.2);
+		}
+
+	#cw-capture-artigo .capture form  .uf-submit {
+		background-color: #FF613D !important;
+		color: #FFFFFF;
+		}
+
+	#cw-capture-artigo .capture form .uf-submit:hover {
+		background-color: #FF7657 !important;
+		}
+
+	#cw-capture-artigo .uf-arrow svg polygon {
+		fill: #FE5F3C !important;
+		}
+	#cw-capture-artigo .capture-inner:last-child {
+		background-color: #374447;
+		}
+	#cw-capture-artigo.sb .capture-close i {
+		color: #00C7C0 !important;
+		}
+
+	#cw-capture-artigo.sb .capture-close i:hover {
+		color: #FF613D !important;
+		}
+
+	#cw-capture-artigo.sb {
+		border-bottom: 10px solid #B3C1C7;
+		background-color: #374447;
+		}
+
+	#cw-capture-artigo.sb .capture-form {
+		border-bottom: 0px !important;
+		}
+
+	#cw-capture-artigo.sb .capture form .uf-submit {
+		height: 48px;
+		line-height: 48px;
+		}
+
+	#cw-capture-artigo.sb .capture .uf-icon:after { top: 15px; }
+
+	@media screen and (min-width:680px) {
+		#cw-capture-artigo.sb .uf-icon:after { top: 14px }
+		}
+
+	ul.redes-list li a {
+		background-color: #3C599B !important;
+		color: #FFFFFF !important;
+		}
+	ul.redes-list li a:before {
+		color: #FFFFFF !important;
+		}
+	
+
+	ul.Cisco-list li a {
+		background-color: #1BB2E9 !important;
+		color: #FFFFFF !important;
+		}
+	ul.Cisco-list li a:before {
+		color: #FFFFFF !important;
+		}
+	
+
+	ul.linux-list li a {
+		background-color: #D94330 !important;
+		color: #FFFFFF !important;
+		}
+	ul.linux-list li a:before {
+		color: #FFFFFF !important;
+		}
+	
+
+	ul.carreira-list li a {
+		background-color: #CA262B !important;
+		color: #FFFFFF !important;
+		}
+	ul.carreira-list li a:before {
+		color: #FFFFFF !important;
+		}
+	
+</style>
+<script type="text/javascript" async="" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/embed.js.download"></script><script async="" type="text/javascript" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/count.js.download"></script><script src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/count-data.js.download"></script><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.d797d52db05c56e7ec33542889f90bca.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.c11fe52243dba94195dd363cbd3310b9.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.37ca27bb3049421f2832eed5d09cfc6b.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><script src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/alfalfa.4a5fcca1fe50a757044dfd331b660625.js.download" async="" charset="UTF-8"></script></head>
+
+<body class="wordpress ltr pt pt-br child-theme y2018 m10 d04 h16 thursday logged-out singular singular-post singular-post-3486 post-format-standard epico-sidebar-right epc-s5 epc-ss epico-compact font-primary" dir="ltr" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+
+	
+	<div id="page">
+
+	
+		
+	
+		<header id="header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+
+			<div class="wrap">
+
+				<div id="branding" itemscope="itemscope" itemtype="http://schema.org/Organization">
+
+				
+				
+					<p id="site-title" itemprop="name">
+
+						<a itemprop="url" href="http://www.dltec.com.br/blog" rel="home" title="Homepage" class="img-hyperlink">
+
+							<img style="width: 160px" id="logo" itemprop="logo" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/logo_header_2.png" alt="Blog da DlteC">
+
+						</a>
+
+					</p>
+
+				
+				</div><!-- #branding -->
+
+				<div class="nav" id="nav">
+
+					<!-- Menu de navegacao primario -->
+
+	<nav id="menu-primary" class="menu font-secondary" role="navigation" aria-label="Navegação primária Menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+
+
+		<a id="nav-toggle" href="http://www.dltec.com.br/blog/cisco/topologias-tipicas-em-redes-wan-frame-relay/#" title="Alternar navegação"><span class="screen-reader-text">Alternar navegação</span><span class="nav-text">Menu</span></a>
+
+		<div class="assistive-text skip-link">
+			<a href="http://www.dltec.com.br/blog/cisco/topologias-tipicas-em-redes-wan-frame-relay/#content">Pular para o conteúdo</a>
+		</div>
+
+		<ul id="menu-primary-items" class="menu-items"><li id="menu-item-5312" class="fa fa-home menu-item menu-item-type-custom menu-item-object-custom menu-item-5312"><a href="http://site.dltec.com.br/">Home</a></li>
+<li id="menu-item-5313" class="fa fa-graduation-cap menu-item menu-item-type-custom menu-item-object-custom menu-item-5313"><a href="http://site.dltec.com.br/curso/categorias">Cursos</a></li>
+<li id="menu-item-5314" class="fa fa-book menu-item menu-item-type-custom menu-item-object-custom menu-item-5314"><a href="http://site.dltec.com.br/ebook/categorias">Ebooks</a></li>
+<li id="menu-item-5315" class="fa fa-wordpress menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-5315"><a href="http://www.dltec.com.br/blog">Blog</a></li>
+<li id="menu-item-5316" class="fa fa-money menu-item menu-item-type-custom menu-item-object-custom menu-item-5316"><a href="http://site.dltec.com.br/pricing">Preços</a></li>
+<li id="menu-item-5318" class="fa fa-stop menu-item menu-item-type-custom menu-item-object-custom menu-item-5318"><a href="http://site.dltec.com.br/auth/login">Login</a></li>
+</ul>
+	</nav><!-- #menu-primary -->
+				<div id="search-wrap">
+
+					<a id="search-toggle" href="http://www.dltec.com.br/blog/cisco/topologias-tipicas-em-redes-wan-frame-relay/#" title="Busca"><span class="search-text">Busca</span></a>
+
+					<form role="search" method="get" class="search-form" action="http://www.dltec.com.br/blog/">
+        <input type="search" placeholder=" Buscar por:" name="s" class="search-field fa font-primary" value="">
+        <input class="search-submit fa fa-search font-primary font-secondary" type="submit" value="Ok ">
+</form>
+				</div>
+
+				</div>
+
+			</div><!-- .wrap -->
+
+		</header><!-- #header -->
+
+			
+				
+	<aside id="sidebar-promo" class="sidebar sidebar-col-1" role="complementary" aria-label="Promocional Barra lateral" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+
+		<section id="epico_capture_widget-id-6" class="widget widget_epico_capture_widget-id"><!--[if IE]><div id="cw-captura-topo"  class="capture-wrap uf-wrap ip fw ie"><![endif]--><!--[if !IE]><!--><div id="cw-captura-topo" class="capture-wrap uf-wrap ip fw"><!--<![endif]--><div class="capture capture-inner uf uf-inner animated"><div class="capture-container uf-container"><p class="capture-notice uf-notice fadeinleft">Lista VIP de TI - Redes, Cisco e Linux</p><p class="capture-iconinner uf-iconinner"><i class="fa fa-refresh rotatein"></i></p><form id="captura-topo" class="fadeinright" method="post" enctype="multipart/form-data" action="https://site.dltec.com.br/acq/form/blog" accept-charset="utf-8&quot;" novalidate="novalidate">
+
+								<input type="hidden" name="f" value="1598" class="font-primary">
+
+								<input type="hidden" name="s" value="" class="font-primary">
+
+								<input type="hidden" name="c" value="0" class="font-primary">
+
+								<input type="hidden" name="m" value="0" class="font-primary">
+
+								<input type="hidden" name="act" value="sub" class="font-primary">
+
+								<input type="hidden" name="nlbox[]" value="3" class="font-primary">
+
+								<input class="uf-email pulse font-primary" type="email" name="email" placeholder=" seu email...">
+
+								<span class="capture-wrapicon uf-wrapicon">
+
+									<input class="uf-submit font-primary font-secondary" name="submit" value="Quero Receber!" type="submit">
+
+								</span>
+
+							</form></div></div><div style="display: none" class="capture-overlay uf-overlay"><p class="capture-overlay-warning uf-overlay-warning">Esta área é muito estreita para esta versão do widget. Transfira-o para uma área mais larga ou ative a versão para a barra lateral. <a class="capture-link uf-link" href="http://www.dltec.com.br/blog/wp-admin/widgets.php">nas opções do widget</a>, dentro da aba "Personalização".</p></div></div></section>
+	</aside><!-- #sidebar-promo .aside -->
+
+ 
+			
+	
+ <div id="breadcrumbs">
+
+	<div class="wrap">
+
+		
+		<nav class="breadcrumb-trail breadcrumbs font-secondary" itemprop="breadcrumb"><span class="trail-begin"><a href="http://www.dltec.com.br/blog" title="Blog da DlteC" rel="home">Início</a></span>
+			 <span class="sep"> </span> <a href="http://www.dltec.com.br/blog/category/cisco/" title="Cisco">Cisco</a>
+			 <span class="sep"> </span> <span class="trail-end">Topologias típicas em redes WAN Frame-relay</span>
+		</nav>
+	</div>
+
+ </div>
+
+ 
+	<div id="main-container">
+
+		<div class="wrap">
+
+	
+	
+			<main id="content" class="content content-left" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+
+			
+				
+				
+					
+						
+						<article id="post-3486" class="entry post publish author-marcelo post-3486 format-standard has-post-thumbnail category-cisco format-default" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+
+	
+		<header class="entry-header">
+
+			<h1 class="entry-title font-headlines" itemprop="headline">Topologias típicas em redes WAN Frame-relay</h1>
+
+			<div class="entry-byline font-secondary">
+
+				<span class="entry-author" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><a href="http://www.dltec.com.br/blog/author/marcelo/" title="Posts de Marcelo Brenzink do Nascimento" rel="author" class="url fn n" itemprop="url"><span itemprop="name">Marcelo Brenzink do Nascimento</span></a></span>
+
+				<time class="entry-published updated" datetime="2013-07-26T22:13:27+00:00" title="sexta-feira, julho 26, 2013, 10:13 pm">26 de julho de 2013</time>
+
+				<a href="http://www.dltec.com.br/blog/cisco/topologias-tipicas-em-redes-wan-frame-relay/#disqus_thread" class="comments-link" itemprop="discussionURL" data-disqus-identifier="3486 http://www.dltec.com.br/blog/?p=3486">Nenhum comentário</a>
+				<span class="entry-terms category" itemprop="articleSection"><a href="http://www.dltec.com.br/blog/category/cisco/" rel="tag">Cisco</a></span>
+				
+			</div><!-- .entry-byline -->
+
+				
+				
+			
+
+
+				
+				<div class="sticky sticky-active" style="display: block; height: 111px; width: auto; margin: auto; position: relative; float: none; left: auto; right: auto; top: auto; bottom: auto; vertical-align: top;"><div id="social-bar-sticky" class="social-bar sticky" style="width: 971px; top: 0px; bottom: auto; left: 271.5px; right: auto; position: fixed;">
+
+					<ul class="social-likes social-likes_notext social-likes-colorful social-likes_visible" data-counters="no">
+
+						
+							<li class="social-likes__widget social-likes__widget_facebook" title="Compartilhe no Facebook"><span class="social-likes__button social-likes__button_facebook"><span class="social-likes__icon social-likes__icon_facebook"></span></span></li>
+
+						
+						
+							<li class="social-likes__widget social-likes__widget_twitter" title="Compartilhe no Twitter"><span class="social-likes__button social-likes__button_twitter"><span class="social-likes__icon social-likes__icon_twitter"></span></span></li>
+
+						
+						
+							<li class="social-likes__widget social-likes__widget_plusone" title="Compartilhe no Google+"><span class="social-likes__button social-likes__button_plusone"><span class="social-likes__icon social-likes__icon_plusone"></span></span></li>
+
+						
+						
+						
+							<li class="social-likes__widget social-likes__widget_linkedin" title="Compartilhe no LinkedIn"><span class="social-likes__button social-likes__button_linkedin"><span class="social-likes__icon social-likes__icon_linkedin"></span></span></li>
+
+						
+					</ul>
+
+					 
+						<span id="social-close" aria-hidden="true"><i class="fa fa-times-circle fadein"></i></span>
+
+					
+				</div></div>
+
+				
+		</header><!-- .entry-header -->
+
+		<div class="entry-content" itemprop="articleBody">
+
+			<p class="estimated-read-time">Tempo de leitura:<small> 2 minutos</small></p> <p>Olá pessoal, o <strong>Frame-relay</strong> é uma tecnologia WAN cobrada nas certificações Cisco <strong>CCNA</strong> e <strong>CCNP Routing &amp; Switching</strong> muito mais por motivos históricos, pois atualmente temos outras tecnologias que vem substituindo esse tipo de opção de conexão WAN por outras mais rápidas.</p>
+<p>É importante entender como o<strong> Frame-relay</strong> pode ser conectado porque cada opção possui uma configuração específica recomendada, as topologias possíveis são:</p>
+<ul>
+<li><b>Malha completa (Full Mashed): </b>todas as possíveis conexões são realizadas conforme figura abaixo. Essa é a topologia mais completa, porém mais cara também, pois dependendo do número de unidades a quantidade de PVCs (circuitos virtuais permanentes) necessários será bastante alta. As redes em malha completa resolvem o problema do Split-horizon característico de redes frame-relay, pois elas são redes NBMA ou do tipo Multiacesso sem suporte a broadcast.</li>
+</ul>
+<p style="text-align: center;">&nbsp;<a href="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/ospf-frame-full.gif" class="img-hyperlink"><img class="aligncenter  wp-image-3488" alt="Frame-relay Full-Meshed" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/ospf-frame-full.gif" width="422" height="274"></a></p>
+<ul>
+<li><b>Malha Parcial (Mashed): </b>há diversas conexões entre as possíveis interfaces, mas não de maneira completa, conforme figura abaixo. Note que em comparação com a figura anterior, onde temos uma topologia completa, faltam três circuitos.</li>
+</ul>
+<p style="text-align: center;">&nbsp;<a href="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/ospf-frame-partial.gif" class="img-hyperlink"><img class="aligncenter  wp-image-3489" alt="Frame-relay partial meshed" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/ospf-frame-partial.gif" width="422" height="274"></a></p>
+<ul>
+<li><b>Hub-and-spoke (Star):</b>&nbsp;conexão de apenas um PVC de cada unidade remota até uma unidade central conforme figura abaixo. Esta topologia também é chamada de&nbsp;<b>estrela</b>&nbsp;(star). Esta é a mais encontrada em implementações práticas de Frame-relay, sendo que sua principal característica é que para haver conectividade entre as Unidades remotas há obrigatoriedade de passagem pela matriz (HUB). Esta topologia é um tipo de&nbsp;<b>malha parcial</b>.</li>
+</ul>
+<p style="text-align: center;">&nbsp;<a href="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/ospf-frame-hub.gif" class="img-hyperlink"><img class="aligncenter  wp-image-3490" alt="Frame-relay Hub-and-spoke" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/ospf-frame-hub.gif" width="278" height="247"></a></p>
+<p>As configurações do frame-relay podem ser realizadas utilizando ou não sub-interfaces, semelhante às sub-interfaces utilizadas para configurar o roteamento entre VLANs, porém em interfaces seriais. Por isso, para cada uma das topologias existe uma recomendação de configuração, por exemplo, em uma rede NBMA recomenda-se conexão em malha completa utilizando configurações <b>sem sub-interfaces</b>, já em topologias em estrela recomenda-se utilizar sub-interfaces ponto a ponto.</p>
+<p>Outra opção de configuração é fazer um pedaço da topologia como se fosse malha completa e alguns links como ponto a ponto, para isso fazemos uma configuração mista com sub-interfaces ponto a ponto e ponto multiponto (<b>multipoint</b>).</p>
+<p>É isso aí meus amigos, ficamos por aqui e aguardamos as sugestões para próximos artigos!</p>
+<p><strong>Prof Marcelo Nascimento</strong></p>
+<div class="dltip"><p></p>
+<p>Venha conhecer nossos&nbsp;<a href="http://www.dltec.com.br/index.php/cursos-redes-cisco.html">Cursos preparatórios para certificações Cisco&nbsp;</a>&nbsp;e inicie uma carreira de sucesso. Cursos online, baixo custo, material atualizado, simulados, tutoria especializada e muito mais. Venha aprender redes, Cisco e muito mais com a DlteC do Brasil.</p>
+<p></p></div>
+
+			
+		</div><!-- .entry-content -->
+
+
+	
+	
+
+		
+		
+			<span id="zen" aria-hidden="true">
+
+					<span class="zen-text">
+
+						Leitura focada
+					</span>
+
+					<i class="fa fa-power-off fadein"></i>
+
+			</span>
+
+		
+	
+
+</article><!-- .entry -->
+						
+							
+	<aside id="sidebar-after-content" class="sidebar" role="complementary" aria-label="Após os artigos Barra lateral" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+
+		<section id="epico_capture_widget-id-4" class="widget widget_epico_capture_widget-id"><!--[if IE]><div id="cw-capture-artigo"  class="capture-wrap uf-wrap sb ie"><![endif]--><!--[if !IE]><!--><div id="cw-capture-artigo" class="capture-wrap uf-wrap sb"><!--<![endif]--><div class="capture uf"><div class="capture-container uf-container"><p class="capture-title uf-title fadeinleft">Ainda mais conteúdo (exclusivo) por e-mail</p><p class="capture-icon uf-icon"><i class="fa fa-envelope swing"></i></p><p class="capture-intro uf-intro fadeinright">Insira o seu e-mail abaixo para receber gratuitamente as atualizações da DlteC<span class="uf-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46.322 60"><polygon fill="#FE5F3C" points="33.831,36.839 23.161,0 12.491,36.839 0,36.839 23.161,60 46.322,36.839"></polygon></svg></span></p></div></div><div class="capture capture-form uf animated"><div class="capture-container uf-container"><form id="capture-artigo" class="fadeinright" method="post" enctype="multipart/form-data" action="https://site.dltec.com.br/acq/form/blog" accept-charset="utf-8&quot;" novalidate="novalidate">
+
+							<input type="hidden" name="f" value="1594" class="font-primary">
+
+							<input type="hidden" name="s" value="" class="font-primary">
+
+							<input type="hidden" name="c" value="0" class="font-primary">
+
+							<input type="hidden" name="m" value="0" class="font-primary">
+
+							<input type="hidden" name="act" value="sub" class="font-primary">
+
+							<input type="hidden" name="nlbox[]" value="3" class="font-primary">
+
+							<input class="uf-email pulse font-primary" type="email" name="email" placeholder=" Insira seu email aqui">
+
+							<span class="capture-wrapicon uf-wrapicon">
+
+								<input class="uf-submit font-primary font-secondary" name="submit" value="Assine já!" type="submit">
+
+							</span>
+
+						</form></div></div></div></section>
+	</aside><!-- #sidebar-after-content .aside -->
+
+ 
+							
+							<div class="author-profile vcard">
+
+	<h4 class="author-name fn n font-headlines">
+		Sobre <a href="http://www.dltec.com.br/blog/author/marcelo/">Marcelo Brenzink do Nascimento</a>	</h4>
+
+	<img alt="" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/0f81f93438818fa8027a0a1ff8fd8797.jpeg" srcset="http://0.gravatar.com/avatar/0f81f93438818fa8027a0a1ff8fd8797?s=192&amp;d=mm&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96" itemprop="image">
+	<div class="author-description author-bio">
+
+	
+		<p>Sou Cofundador da DlteC do Brasil, graduado em Engenharia Eletrônica/Telecomunicações pela UTFPR e pós-graduado em Redes e Sistemas Distribuídos pela PUC-PR. Trabalho na área de Tecnologia da Informação e Telecomunicações desde 1996. Certificado ITIL Foundations, CCNA Routing &amp; Switching, CCNA Voice, CCNA Security e CCNP Routing &amp; Switching.</p>
+
+	
+		<p class="social">
+							<a class="twitter" href="http://twitter.com/bscimento" title="Marcelo Brenzink do Nascimento no Twitter">Twitter</a>
+			
+							<a class="facebook" href="https://www.facebook.com/prof.marcelo.nascimento.dltec" title="Marcelo Brenzink do Nascimento no Facebook">Facebook</a>
+			
+							<a class="google-plus" href="https://plus.google.com/u/0/112264786687110110284?rel=author" title="Marcelo Brenzink do Nascimento no Google+">Google+</a>
+					</p>
+
+	</div>
+</div>
+							
+							
+							
+								<div class="epico-related-posts">
+
+									<h3 class="epico-related-posts-title font-headlines"><i class="fa fa-plus-square-o"></i> Artigos relacionados</h3>
+
+									<ul>
+																					<li style="height: 314px;">
+												
+													
+													<div class="wrap-img-relpost">
+
+														<a class="img-hyperlink" href="http://www.dltec.com.br/blog/cisco/cisco-redefine-telepresenca-como-experiencia-em-pessoa-para-todos/" title="Cisco redefine telepresença como experiência “em pessoa” para todos">
+
+															<img src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/USNews_TelePresence2-304x170.jpg" alt="" title="USNews_TelePresence2">
+
+														</a>
+
+													</div>
+
+												
+												<h4 class="related-post-title font-headlines"><a href="http://www.dltec.com.br/blog/cisco/cisco-redefine-telepresenca-como-experiencia-em-pessoa-para-todos/" rel="bookmark" itemprop="url">Cisco redefine telepresença como experiência “em pessoa” para todos</a></h4>
+											</li>
+																					<li style="height: 314px;">
+												
+													
+													<div class="wrap-img-relpost">
+
+														<a class="img-hyperlink" href="http://www.dltec.com.br/blog/cisco/vai-fazer-uma-prova-de-certificacao-entao-conheca-os-tipos-de-questao-que-podem-cair/" title="Vai fazer uma prova de certificação? Então conheça os tipos de questão que podem cair!">
+
+															<img src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/cisco-salario-3-243x170.jpg" alt="" title="certificações cisco">
+
+														</a>
+
+													</div>
+
+												
+												<h4 class="related-post-title font-headlines"><a href="http://www.dltec.com.br/blog/cisco/vai-fazer-uma-prova-de-certificacao-entao-conheca-os-tipos-de-questao-que-podem-cair/" rel="bookmark" itemprop="url">Vai fazer uma prova de certificação? Então conheça os tipos de questão que podem cair!</a></h4>
+											</li>
+																					<li style="height: 314px;">
+												
+													
+													<div class="wrap-img-relpost">
+
+														<a class="img-hyperlink" href="http://www.dltec.com.br/blog/cisco/cisco-anuncia-novas-provas-para-o-ccnp-security/" title="Cisco anuncia novas provas para o CCNP Security">
+
+															<img src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/cisco123-304x170.jpg" alt="" title="CCNP Security">
+
+														</a>
+
+													</div>
+
+												
+												<h4 class="related-post-title font-headlines"><a href="http://www.dltec.com.br/blog/cisco/cisco-anuncia-novas-provas-para-o-ccnp-security/" rel="bookmark" itemprop="url">Cisco anuncia novas provas para o CCNP Security</a></h4>
+											</li>
+																					<li style="height: 314px;">
+												
+													
+													<div class="wrap-img-relpost">
+
+														<a class="img-hyperlink" href="http://www.dltec.com.br/blog/cisco/ccna-security-canal-livre-discute-ataques-ciberneticos/" title="Galera do CCNA Security – Canal Livre discute ataques cibernéticos">
+
+															<img src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/images.jpg" alt="" title="images">
+
+														</a>
+
+													</div>
+
+												
+												<h4 class="related-post-title font-headlines"><a href="http://www.dltec.com.br/blog/cisco/ccna-security-canal-livre-discute-ataques-ciberneticos/" rel="bookmark" itemprop="url">Galera do CCNA Security – Canal Livre discute ataques cibernéticos</a></h4>
+											</li>
+																					<li style="height: 314px;">
+												
+													
+													<div class="wrap-img-relpost">
+
+														<a class="img-hyperlink" href="http://www.dltec.com.br/blog/cisco/certificacao-ccna-laboratorio-completo/" title="Laboratório Completo para a Certificação CCNA e CCENT – Nível Iniciante">
+
+															<img src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/capa-304x170.jpg" alt="" title="laboratório certificação ccna e ccent">
+
+														</a>
+
+													</div>
+
+												
+												<h4 class="related-post-title font-headlines"><a href="http://www.dltec.com.br/blog/cisco/certificacao-ccna-laboratorio-completo/" rel="bookmark" itemprop="url">Laboratório Completo para a Certificação CCNA e CCENT – Nível Iniciante</a></h4>
+											</li>
+																					<li style="height: 314px;">
+												
+													
+													<div class="wrap-img-relpost">
+
+														<a class="img-hyperlink" href="http://www.dltec.com.br/blog/cisco/cisco-plus-brazil-2012/" title="Cisco Plus Brazil 2012">
+
+															<img src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/cisco-1-304x170.jpg" alt="" title="Categoria Cisco 1">
+
+														</a>
+
+													</div>
+
+												
+												<h4 class="related-post-title font-headlines"><a href="http://www.dltec.com.br/blog/cisco/cisco-plus-brazil-2012/" rel="bookmark" itemprop="url">Cisco Plus Brazil 2012</a></h4>
+											</li>
+																			</ul>
+								</div>
+							
+							
+									<div class="nav-posts">
+
+			<div class="prev resize-me">
+				<a href="http://www.dltec.com.br/blog/redes/resumo-dos-enderecos-ipv6-para-quem-esta-estudando-para-ceriticacao/" rel="prev" style="height: 194px;"><span>Artigo anterior</span> Resumo dos endereços IPv6 para quem está estudando para provas de certificação</a>
+   				
+			</div>
+
+			<div class="next resize-me">
+
+				<a href="http://www.dltec.com.br/blog/cisco/algumas-dicas-para-utilizar-melhor-a-busca-de-informacoes-no-show-running-config-com-cisco-ios/" rel="next" style="height: 194px;"><span>Próximo artigo</span> Algumas dicas para utilizar melhor a busca de informações no show running-config com Cisco IOS</a>
+   				
+			</div>
+
+		</div> <!-- .nav-posts -->
+							
+<div id="disqus_thread"><iframe id="dsq-app5856" name="dsq-app5856" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 390px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+
+<script type="text/javascript">
+var disqus_url = 'http://www.dltec.com.br/blog/cisco/topologias-tipicas-em-redes-wan-frame-relay/';
+var disqus_identifier = '3486 http://www.dltec.com.br/blog/?p=3486';
+var disqus_container_id = 'disqus_thread';
+var disqus_shortname = 'dltecdobrasil';
+var disqus_title = "Topologias típicas em redes WAN Frame-relay";
+var disqus_config_custom = window.disqus_config;
+var disqus_config = function () {
+    /*
+    All currently supported events:
+    onReady: fires when everything is ready,
+    onNewComment: fires when a new comment is posted,
+    onIdentify: fires when user is authenticated
+    */
+    
+    
+    this.language = '';
+        this.callbacks.onReady.push(function () {
+
+        // sync comments in the background so we don't block the page
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = '?cf_action=sync_comments&post_id=3486';
+
+        var firstScript = document.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(script, firstScript);
+    });
+    
+    if (disqus_config_custom) {
+        disqus_config_custom.call(this);
+    }
+};
+
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+						
+					
+					
+				
+			</main><!-- #content -->
+
+				
+		<aside id="sidebar-primary" class="sidebar right">
+
+			
+				<section id="advman-5" class="widget Advman_Widget"><h4 class="widgettitle font-headlines">Seja Premium</h4><a href="http://site.dltec.com.br/go/certificacao-cisco?sck=blog-ad-39" class="img-hyperlink"><img class="aligncenter" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/premium-01.png" alt="seja premium"></a></section><section id="epico_links-id-2" class="widget widget_epico_links-id widget_links_first">		
+		<ul class="redes-list">
+			
+			<li class="redes-item">
+
+				<a class="fa fa-caret-right" id="redes" title="Redes" href="http://www.dltec.com.br/blog/category/redes/">Redes</a>
+
+			</li>
+
+			
+		</ul>
+
+		</section><section id="epico_links-id-3" class="widget widget_epico_links-id">		
+		<ul class="Cisco-list">
+			
+			<li class="Cisco-item">
+
+				<a class="fa fa-caret-right" id="Cisco" title="Cisco" href="http://www.dltec.com.br/blog/category/cisco/">Cisco</a>
+
+			</li>
+
+			
+		</ul>
+
+		</section><section id="epico_links-id-4" class="widget widget_epico_links-id">		
+		<ul class="linux-list">
+			
+			<li class="linux-item">
+
+				<a class="fa fa-caret-right" id="linux" title="linux" href="http://www.dltec.com.br/blog/category/linux/">linux</a>
+
+			</li>
+
+			
+		</ul>
+
+		</section><section id="epico_links-id-5" class="widget widget_epico_links-id widget_links_last">		
+		<ul class="carreira-list">
+			
+			<li class="carreira-item">
+
+				<a class="fa fa-caret-right" id="carreira" title="Carreira" href="http://www.dltec.com.br/blog/category/carreira/">Carreira</a>
+
+			</li>
+
+			
+		</ul>
+
+		</section><section id="epico_pop-id-3" class="widget widget_epico_pop-id">		<div class="populares" id="ep-populares" itemscope="" itemtype="http://schema.org/ItemList">
+
+			<meta itemprop="itemListOrder" content="Descending">
+
+			
+			<h3 class="populares-title fa fa-star font-headlines" itemprop="name">
+				Artigos populares			</h3>
+
+			
+			
+			<ul class="populares-list">
+				
+					<li class="populares-item" itemprop="itemListElement"><a class="populares-link" id="populares" target="_blank" href="http://www.dltec.com.br/blog/cisco/primeira-certificacao-cisco/" itemprop="url">8 Passos Para Sua Primeira Certificação Cisco </a></li>
+
+				
+					<li class="populares-item" itemprop="itemListElement"><a class="populares-link" id="populares1" target="_blank" href="http://www.dltec.com.br/blog/cisco/5-comandos-do-cisco-ios-que-todo-network-admin-deveria-saber/" itemprop="url">5 Comandos do Cisco IOS que todo Network Admin deveria saber </a></li>
+
+				
+					<li class="populares-item" itemprop="itemListElement"><a class="populares-link" id="populares2" target="_blank" href="http://www.dltec.com.br/blog/cisco/dicas-para-agendar-provas-de-certificacao-cisco/" itemprop="url">Dicas para agendar as provas de certificação Cisco no site da Pearson Vue </a></li>
+
+				
+					<li class="populares-item" itemprop="itemListElement"><a class="populares-link" id="populares3" target="_blank" href="http://www.dltec.com.br/blog/linux/certificacao-lpi/" itemprop="url">Certificação LPI Linux </a></li>
+
+				
+			</ul>
+
+			
+		</div></section>
+			
+			
+	<div id="after-primary">
+
+		<div class="sticky sticky-active" style="display: block; height: 570px; width: 100%; margin: auto; position: relative; float: left; left: auto; right: auto; top: auto; bottom: auto; vertical-align: top;"><section id="epico_capture_widget-id-2" class="widget widget_epico_capture_widget-id sticky" style="width: 342px; top: 78px; bottom: auto; left: 1283.75px; right: auto; position: fixed;"><!--[if IE]><div id="cw-capture-lateral"  class="capture-wrap uf-wrap sb ie"><![endif]--><!--[if !IE]><!--><div id="cw-capture-lateral" class="capture-wrap uf-wrap sb"><!--<![endif]--><div class="capture uf"><div class="capture-container uf-container"><h4 class="capture-title uf-title fadeinleft font-headlines">Lista VIP de TI</h4><p class="capture-icon uf-icon"><i class="fa fa-refresh rotatein"></i></p><p class="capture-intro uf-intro fadeinright">Participe da lista VIP da DlteC e receba vídeos, tutoriais e novidades na área de infraestrutura de redes (Redes, Cisco, Linux e Carreira de TI)<span class="uf-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46.322 60"><polygon fill="#00C7C0" points="33.831,36.839 23.161,0 12.491,36.839 0,36.839 23.161,60 46.322,36.839"></polygon></svg></span></p></div></div><div class="capture capture-form uf animated"><div class="capture-container uf-container"><form id="capture-lateral" class="fadeinright" method="post" enctype="multipart/form-data" action="https://site.dltec.com.br/acq/form/blog" accept-charset="utf-8&quot;" novalidate="novalidate">
+
+							<input type="hidden" name="f" value="1590" class="font-primary">
+
+							<input type="hidden" name="s" value="" class="font-primary">
+
+							<input type="hidden" name="c" value="0" class="font-primary">
+
+							<input type="hidden" name="m" value="0" class="font-primary">
+
+							<input type="hidden" name="act" value="sub" class="font-primary">
+
+							<input type="hidden" name="nlbox[]" value="3" class="font-primary">
+
+							<input class="uf-email pulse font-primary" type="email" name="email" placeholder=" Insira seu email aqui">
+
+							<span class="capture-wrapicon uf-wrapicon">
+
+								<input class="uf-submit font-primary font-secondary" name="submit" value="Quero Participar" type="submit">
+
+							</span>
+
+						</form></div></div></div></section></div>
+	</div><!-- #sidebar-after-primary section -->
+
+ 
+		</aside><!-- #sidebar-primary -->
+		</div><!-- .wrap -->
+
+	</div><!-- #main-conteiner -->
+
+	
+		
+			
+		
+		<footer id="footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+
+		
+			<div class="wrap footer-widgets">
+
+				
+	<aside id="sidebar-footer" class="sidebar sidebar-col-1" role="complementary" aria-label="Rodapé Barra lateral" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+
+		<section id="social-id-3" class="widget widget_social-id">	<div class="uf_epicosocial" id="es-uf_epicosocial">
+
+		
+		<h3 class="uf_epicosocial-title font-headlines">
+			Siga a DlteC nas Redes Sociais!		</h3>
+
+		
+
+		<ul class="uf_epicosocial-list">
+
+		
+			
+			<li class="uf_epicosocial-item"><a title="Facebook" class="fa fa-facebook" target="_blank" id="uf_epicosocial" href="https://www.facebook.com/dltec"></a></li>
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			
+			
+			
+			
+
+		
+			
+
+			
+
+			
+
+			
+			<li class="uf_epicosocial-item"><a title="Twitter" class="fa fa-twitter" target="_blank" id="uf_epicosocial1" href="https://www.twitter.com/dltec"></a></li>
+
+			
+
+			
+
+			
+
+			
+			
+			
+			
+			
+
+		
+			
+
+			
+			<li class="uf_epicosocial-item"><a title="YouTube" class="fa fa-youtube" target="_blank" id="uf_epicosocial2" href="https://www.youtube.com/user/dltecbrasil?sub_confirmation=1"></a></li>
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			
+			
+			
+			
+
+		
+		</ul>
+
+	</div></section>
+	</aside><!-- #sidebar-footer .aside -->
+
+ 
+			</div>
+
+		
+			<div id="credits">
+
+				<div class="wrap">
+
+					<div class="credit">
+
+						<p>
+							
+							
+							<span id="credit-text"><a href="http://www.dltec.com.br/blog" rel="home" title="Blog da DlteC">Blog da DlteC</a> · 2007 - 2018
+								
+									© Todos os direitos reservados
+								
+							</span>
+
+						</p>
+
+						<!-- Menu de navegacao secundario -->
+
+	<nav id="menu-secondary" class="menu font-secondary" role="navigation" aria-label="Links do rodapé Menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+
+		<ul id="menu-secondary-items" class="menu-items"><li id="menu-item-5319" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5319"><a href="http://site.dltec.com.br/contact">Contato</a></li>
+<li id="menu-item-5320" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5320"><a href="http://site.dltec.com.br/auth/register">Crie sua conta</a></li>
+<li id="menu-item-5321" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5321"><a href="http://site.dltec.com.br/auth/login">Login</a></li>
+</ul>
+	</nav><!-- #menu-secondary -->
+					</div>
+
+				</div>
+
+			</div>
+
+		</footer><!-- #footer -->
+
+	</div><!-- #page -->
+
+	        <script type="text/javascript">
+        // <![CDATA[
+        var disqus_shortname = 'dltecdobrasil';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1 && nodes[i].parentNode.tagName == 'A') {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        // ]]>
+        </script>
+        		<!-- Advertising Manager v3.5.3 (1,481 seconds.) -->
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+
+	var $capture = $( '#cw-captura-topo' );
+	var $capture_sidebar = $( '#after-primary' ).find( '.widget_epico_capture_widget-id' ).last();
+
+	if ( $capture.length ) {
+
+		jQuery.validator.setDefaults({
+		  success: "valid"
+		});
+
+		$('form', $capture).validate({
+			rules: {
+							'email': {
+					required: true,
+					email: true
+				}
+						},
+			messages: {
+							'email': {
+					required: '',
+					email: ''
+				}
+						},
+			submitHandler: function(form) {
+				form.submit();
+			}
+		});
+	}
+
+	if ( $( '#cw-captura-topo:visible' ).length ){
+		$( window ).on( 'resize',function() {
+			if( $( window ).width() > 700 && $( '#cw-captura-topo.fw' ).width() < 550){
+				$( '#cw-captura-topo.fw' ).css( 'min-height','500px' ).addClass( 'ol' );
+				$( '#cw-captura-topo.fw .capture-overlay' ).show();
+			} else {
+				$( '#cw-captura-topo .capture-overlay' ).hide();
+			}
+		}).trigger( 'resize' );
+	}
+
+
+	});
+jQuery(document).ready(function($) {
+
+	var $capture = $( '#cw-capture-lateral' );
+	var $capture_sidebar = $( '#after-primary' ).find( '.widget_epico_capture_widget-id' ).last();
+
+	if ( $capture.length ) {
+
+		jQuery.validator.setDefaults({
+		  success: "valid"
+		});
+
+		$('form', $capture).validate({
+			rules: {
+							'email': {
+					required: true,
+					email: true
+				}
+						},
+			messages: {
+							'email': {
+					required: '',
+					email: ''
+				}
+						},
+			submitHandler: function(form) {
+				form.submit();
+			}
+		});
+	}
+
+	if ( $( '#cw-capture-lateral:visible' ).length ){
+		$( window ).on( 'resize',function() {
+			if( $( window ).width() > 700 && $( '#cw-capture-lateral.fw' ).width() < 550){
+				$( '#cw-capture-lateral.fw' ).css( 'min-height','500px' ).addClass( 'ol' );
+				$( '#cw-capture-lateral.fw .capture-overlay' ).show();
+			} else {
+				$( '#cw-capture-lateral .capture-overlay' ).hide();
+			}
+		}).trigger( 'resize' );
+	}
+
+
+	
+		
+		if ( $capture_sidebar.length ) {
+
+			var $footerHeight    = $( '#footer' ).height();
+			var $sidebarFooter   = $( '#sidebar-subsidiary' ).height()
+
+			$capture_sidebar.hcSticky({
+				top: 78,
+				bottomEnd: $footerHeight + $sidebarFooter + 100,
+				wrapperClassName: 'sticky',
+				responsive: true,
+				offResolutions: [-1020],
+				stickTo: 'document',
+			});
+
+		$( '#zen' ).on( 'click', function (e){
+				e.preventDefault();
+				$capture_sidebar.hcSticky('stop');
+			}
+		);
+
+	}
+	 
+		$( '.capture-close', $capture ).on( 'click', function (e) {
+			e.preventDefault();
+			$capture.fadeOut( 500 );
+		});
+
+	if ( $capture.length ) {
+
+		$( window ).on( 'resize', function () {
+			if ( $capture.width() < 260 ) {
+				$capture.addClass( 'tiny-sidebar' );
+			} else {
+				$capture.removeClass( 'tiny-sidebar' );
+			}
+		}).trigger( 'resize' );
+	}
+
+	});
+jQuery(document).ready(function($) {
+
+	var $capture = $( '#cw-capture-artigo' );
+	var $capture_sidebar = $( '#after-primary' ).find( '.widget_epico_capture_widget-id' ).last();
+
+	if ( $capture.length ) {
+
+		jQuery.validator.setDefaults({
+		  success: "valid"
+		});
+
+		$('form', $capture).validate({
+			rules: {
+							'email': {
+					required: true,
+					email: true
+				}
+						},
+			messages: {
+							'email': {
+					required: '',
+					email: ''
+				}
+						},
+			submitHandler: function(form) {
+				form.submit();
+			}
+		});
+	}
+
+	if ( $( '#cw-capture-artigo:visible' ).length ){
+		$( window ).on( 'resize',function() {
+			if( $( window ).width() > 700 && $( '#cw-capture-artigo.fw' ).width() < 550){
+				$( '#cw-capture-artigo.fw' ).css( 'min-height','500px' ).addClass( 'ol' );
+				$( '#cw-capture-artigo.fw .capture-overlay' ).show();
+			} else {
+				$( '#cw-capture-artigo .capture-overlay' ).hide();
+			}
+		}).trigger( 'resize' );
+	}
+
+
+	
+		
+		$( '.capture-close', $capture ).on( 'click', function (e) {
+			e.preventDefault();
+			$capture.fadeOut( 500 );
+		});
+
+	if ( $capture.length ) {
+
+		$( window ).on( 'resize', function () {
+			if ( $capture.width() < 260 ) {
+				$capture.addClass( 'tiny-sidebar' );
+			} else {
+				$capture.removeClass( 'tiny-sidebar' );
+			}
+		}).trigger( 'resize' );
+	}
+
+	});
+</script>
+<script type="text/javascript" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/core.min.js.download"></script>
+<script type="text/javascript" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/widget.min.js.download"></script>
+<script type="text/javascript" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/tabs.min.js.download"></script>
+<script type="text/javascript" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/accordion.min.js.download"></script>
+<script type="text/javascript" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/capture.plugin.js.download"></script>
+<script type="text/javascript" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/comment-reply.min.js.download"></script>
+<script type="text/javascript" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/scripts.min.js.download"></script><iframe style="display: none;" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/saved_resource(1).html"></iframe>
+<script type="text/javascript" src="./Topologias típicas em redes WAN Frame-relay _ Blog da DlteC_files/wp-embed.min.js.download"></script>
+
+
+
+</body></html>

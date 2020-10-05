@@ -1,0 +1,38 @@
+! Configuration by Bento ;) 
+! mailto:impalador@gmail.com
+
+configure terminal
+	hostname R_Embratel
+	service password-encryption
+	enable secret embratel
+	banner motd "R_Embratel - PROVEDOR EMBRATEL de INTERNET" 
+	
+	line console 0
+		password embratel
+		login
+		exit
+
+	line vty 0 4
+		password embratel
+		login
+		exit
+
+	int f0/0
+		ip address 200.213.1.1 255.255.255.0
+		no shutdown
+
+	!!
+	! Conexao com o Roteador MATRIZ provendo a 'INTERNET'
+	!!
+	interface s0/0
+		ip address 201.0.0.1 255.255.255.252
+		clock rate 64000
+		no shutdown
+		exit
+
+
+	exit
+	
+	
+
+copy running-config startup-config
