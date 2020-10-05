@@ -4,14 +4,14 @@ Router#configure terminal
 Router(config)#interface fastEthernet 0/0
 Router(config-if)#ipv6 enable
 Router(config-if)#ipv6 address autoconfig
-Router(config-if) ipv6 address 2018:RARA:RAFF:5::1/64
-Router(config-if) ipv6 address 2018:RARA:RAFF:5::/64 eui-64
+Router(config-if) ipv6 address XXXX:XXXX:XXXX:X::X/64
+Router(config-if) ipv6 address XXXX:XXXX:XXXX:X::/64 eui-64
 Router(config-if)#no shutdown
 Router(config)# ipv6 unicast-routing
 Router>sh ipv6 interface brief 
 - DHCPv6 - STATELESS
 Router(config)# ipv6 dhcp pool REDE-ALUNO-RA
-Router(config-dhcp)# dns-server 4004:RARA:RAFF:888:7777::3
+Router(config-dhcp)# dns-server XXXX:XXXX:XXXX:XXXX:XXXX::X
 Router(config-dhcp)# exit
 Router(config)# int f0/0 – INTERFACE GATEWAY DO ROUTER
 Router(config-if)# ipv6 dhcp server REDE-ALUNO-RA
@@ -21,7 +21,7 @@ Router(config-if)# end
 - DHCPv6 - STATEFULL 
 Router(config)# int f0/0 
 Router(config-if)# ipv6 enable 
-Router(config-if) ipv6 address 2003:RARA:RAFF:FACA:D8D9::1/80 
+Router(config-if) ipv6 address XXXX:XXXX:XXXX:XXXX:XXXX::X/80 
 Router(config-if)# ipv6 dhcp server REDE-ALUNO-RA 
 Router(config-if)# ipv6 rip rede-rip enable 
 Router(config-if)#no shutdown 
@@ -30,7 +30,7 @@ Router(config)# ipv6 dhcp pool REDE-ALUNO-RA
 Router(config-dhcp)# prefix-delegation pool REDE-ALUNO-RA lifetime 1800 60 
 Router(config-dhcp)# dns-server xxxxxxxx IPV6 – NECESSÁRIO 
 Router(config-dhcp)# exit 
-Router(config)# ipv6 local pool REDE-ALUNO-RA 2003:RARA:RAFF:FACA:D8D9::/80 80 
+Router(config)# ipv6 local pool REDE-ALUNO-RA XXXX:XXXX:XXXX:XXXX:XXXX::/80 80 
 Router(config)# ipv6 unicast-routing
 
 
